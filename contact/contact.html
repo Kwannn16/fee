@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="../css/contact.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar container flex justify-between align-center">
+        <a href="#" class="brand-logo flex align-center">
+          <img src="../images/logo.png" alt="Brand logo" />
+          <span>Quizzes</span>
+        </a>
+
+        <ul class="nav-menu flex">
+          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item"><a href="#">Quizzes</a></li>
+          <li class="nav-item"><a href="#">Management</a></li>
+          <li class="nav-item"><a href="#">About</a></li>
+          <li class="nav-item"><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="profile-menu">
+          <div class="authenticated">
+            <img
+              class="avatar"
+              src="../images/profile-avatar.png"
+              alt="avatar"
+            />
+            <ul class="profile-dropdown">
+              <li class="nav-item">Cong Dinh</li>
+              <li class="nav-item">Change Password</li>
+              <li class="nav-item">Logout</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container contact-page">
+      <h2 class="page-title center">CONTACT</h2>
+
+      <div class="contact-grid">
+        <!-- LEFT: Feedback form -->
+        <section class="contact-form">
+          <h3 class="contact-heading">Feedback</h3>
+          <p class="muted small">
+            Please fill out the form below to send us your feedback. We will get
+            back to you as soon as possible.
+          </p>
+
+          <form class="form-stack">
+            <label for="name">Name</label>
+            <input
+              id="name"
+              class="input"
+              type="text"
+              placeholder="Enter your name"
+            />
+
+            <label for="email">Email</label>
+            <input
+              id="email"
+              class="input"
+              type="email"
+              placeholder="Enter your email"
+            />
+
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              class="input"
+              rows="7"
+              placeholder="Enter your message"
+            ></textarea>
+
+            <button type="button" class="btn btn-primary">Send</button>
+          </form>
+        </section>
+
+        <!-- RIGHT: Our information -->
+        <div class="contact-info">
+          <h3 class="contact-heading">Our Information</h3>
+          <p class="muted small">
+            We are always here to help you. You can contact us through the
+            following ways.
+          </p>
+
+          <ul class="info-list">
+            <li>
+              <img src="../images/envelope-regular.png" alt="" />
+              congdinh2021@gmail.com
+            </li>
+            <li>
+              <img src="../images/phone-solid.png" alt="" /> +84 944 551 356
+            </li>
+            <li>
+              <img src="../images/location-dot-solid.png" alt="" /> 123 Xuan
+              Dinh, Bac Tu Liem, Ha Noi, Viet Nam
+            </li>
+          </ul>
+
+          <img class="socials" src="../images/social.png" alt="social icons" />
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-top">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/logo.png" alt="Brand logo" />
+            <span>QUIZZES</span>
+          </div>
+          <p class="footer-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+
+        <!-- Menu -->
+        <div class="footer-col">
+          <span>Menu</span>
+          <ul class="footer-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Quizzes</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <span>Contact</span>
+          <ul class="footer-list">
+            <li>
+              <img src="../images/envelope-regular.png" alt="" />
+              <a href="mailto:congdinh2021@gmail.com">congdinh2021@gmail.com</a>
+            </li>
+            <li>
+              <img src="../images/phone-solid.png" alt="" />
+              <a href="tel:+84944531536">+84 944 531 536</a>
+            </li>
+            <li>
+              <img src="../images/location-dot-solid.png" alt="" />
+              123 Xuan Dinh, Bac Tu Liem, Ha Noi, Viet Nam
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">© May 2024 - ReactJS 19</div>
+    </footer>
+  </body>
+</html>
