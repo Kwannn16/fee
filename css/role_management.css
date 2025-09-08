@@ -1,0 +1,379 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #222;
+  background: #f7f8fb;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* UTILITIES */
+.flex {
+  display: flex;
+}
+.align-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+
+/* ========== HEADER ========== */
+header {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.navbar {
+  height: 56px;
+}
+.brand-logo {
+  font-size: 20px;
+  color: #000;
+  gap: 8px;
+}
+.brand-logo img {
+  width: 24px;
+  height: 24px;
+}
+.nav-menu {
+  display: flex;
+  gap: 24px;
+}
+.nav-item a {
+  color: #333;
+}
+.nav-item a:hover {
+  color: #2b8cff;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+.authenticated {
+  position: relative;
+}
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  min-width: 180px;
+  display: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.authenticated:hover .profile-dropdown {
+  display: block;
+}
+.profile-dropdown .nav-item {
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.profile-dropdown .nav-item:hover {
+  background: #f5f7fa;
+}
+
+/* ========== MAIN LAYOUT ========== */
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+}
+.sidebar {
+  background: #fff;
+  padding: 12px 0;
+  font-weight: 600;
+}
+.sidebar-title {
+  padding-left: 14px;
+  margin: 6px 0 10px;
+  font-size: 16px;
+}
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.side-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+  cursor: pointer;
+}
+.side-item:hover {
+  background: #b1bed3;
+}
+.side-item.active {
+  background: #d9e7ff;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========== PANEL ========== */
+.panel {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  padding: 14px 0;
+  margin: 13px 0;
+}
+.panel-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #b1bed3;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+.panel-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 0 14px;
+}
+.panel-actions.between {
+  justify-content: space-between;
+}
+
+/* ========== FORM & FILTER ========== */
+.filter-grid {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 16px;
+  padding-left: 14px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+.input,
+.select {
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0 12px;
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.textarea {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 12px;
+  min-height: 110px;
+  resize: vertical;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 0 14px;
+}
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+  padding: 7px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+.btn:hover {
+  background: #b1bed3;
+}
+.btn-primary {
+  background: rgba(56, 182, 255, 1);
+  color: #fff;
+}
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ========== TABLE ========== */
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table th,
+.table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+  text-align: left;
+}
+.table tbody tr:nth-child(odd) {
+  background: rgba(232, 232, 232, 1);
+}
+.action-cell {
+  display: flex;
+  gap: 5px;
+}
+.icon-btn {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.icon-btn:hover {
+  background: #a0adcf;
+}
+.icon-btn.danger:hover {
+  background: #d3d7df;
+}
+
+/* ========== PAGER ========== */
+.pager-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 10px;
+  align-items: center;
+}
+.page-size {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 6px;
+  padding: 14px 0 0 14px;
+}
+.page-size select {
+  width: 70px;
+}
+.pager {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 10px;
+}
+.pager-btn,
+.page-num {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #d3d7df;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(56, 182, 255, 1);
+}
+.pager-btn img {
+  width: 12px;
+  height: 12px;
+}
+.range {
+  font-size: 16px;
+  padding: 10px 10px 0 10px;
+  text-align: end;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 0px 14px;
+}
+
+.app-footer,
+footer {
+  grid-column: 1 / -1;
+  background: #fff;
+  border-top: 1px solid #ddd;
+}
+.app-footer .footer-top,
+footer .footer-top {
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.6fr 1fr;
+  gap: 24px;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-brand img {
+  width: 24px;
+  height: 24px;
+}
+.footer-brand span {
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+.footer-text {
+  color: #666;
+  font-size: 13px;
+  line-height: 1.4;
+  margin-top: 6px;
+}
+
+.footer-col span {
+  font-size: 20px;
+  font-weight: 700;
+}
+.footer-list {
+  padding: 0;
+  margin: 0;
+}
+.footer-list li {
+  padding-top: 10px;
+  font-size: 14px;
+  color: #1e90ff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer-list img {
+  width: 14px;
+  height: 14px;
+}
+.app-footer .footer-bottom,
+footer .footer-bottom {
+  border-top: 1px solid #eee;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  padding: 10px 24px;
+}
