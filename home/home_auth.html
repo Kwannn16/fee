@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Authen</title>
+    <link rel="stylesheet" href="../css/home.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar container flex justify-between align-center">
+        <a href="#" class="brand-logo flex align-center">
+          <img src="../images/logo.png" alt="Brand logo" />
+          <span>Quizzes</span>
+        </a>
+
+        <ul class="nav-menu flex">
+          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item"><a href="#">Quizzes</a></li>
+          <li class="nav-item"><a href="#">About</a></li>
+          <li class="nav-item"><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="profile-menu">
+          <div class="unauthenticated">
+            <a href="/login" class="btn login-btn">Login</a>
+            <a href="/register" class="btn register-btn">Register</a>
+          </div>
+
+          <div class="authenticated">
+            <img
+              class="avatar"
+              src="../images/profile-avatar.png"
+              alt="avatar"
+            />
+            <ul class="profile-dropdown">
+              <li class="nav-item">Cong Dinh</li>
+              <li class="nav-item">Change Password</li>
+              <li class="nav-item">Logout</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="flex justify-between align-center">
+        <div class="left">
+          <h1>Welcome to Quiz App</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            malesuada, nunc non lacinia fermentum, sapien nec tincidunt libero.
+          </p>
+          <a href="#" class="cta">Take a Quiz</a>
+        </div>
+        <div class="right flex">
+          <img src="../images/quiz-bg-01..png" alt="Hero Illustration" />
+        </div>
+      </section>
+
+      <h3 class="section-title">QUIZZES</h3>
+      <section class="quiz-grid">
+        <article class="quiz-card">
+          <div class="quiz-thumb">
+            <img src="../images/capitals..png" />
+          </div>
+          <div class="quiz-body">
+            <div class="quiz-row">
+              <div class="quiz-title">Capitals of Country</div>
+              <div class="quiz-time">15m</div>
+            </div>
+            <p class="quiz-desc">Test your knowledge of country capitals</p>
+          </div>
+          <div class="quiz-actions">
+            <a href="#" class="btn">Start</a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="quiz-card">
+          <div class="quiz-thumb">
+            <img src="../images/capitals. (1).png" />
+          </div>
+          <div class="quiz-body">
+            <div class="quiz-row">
+              <div class="quiz-title">Capitals of Country</div>
+              <div class="quiz-time">15m</div>
+            </div>
+            <p class="quiz-desc">Test your knowledge of country capitals</p>
+          </div>
+          <div class="quiz-actions">
+            <a href="#" class="btn">Start</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="quiz-card">
+          <div class="quiz-thumb">
+            <img src="../images/capitals. (2).png" />
+          </div>
+          <div class="quiz-body">
+            <div class="quiz-row">
+              <div class="quiz-title">Capitals of Country</div>
+              <div class="quiz-time">15m</div>
+            </div>
+            <p class="quiz-desc">Test your knowledge of country capitals</p>
+          </div>
+          <div class="quiz-actions">
+            <a href="#" class="btn">Start</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-top">
+        <div>
+          <div class="footer-brand">
+            <img src="../images/logo.png" alt="Brand logo" />
+            <span>QUIZZES</span>
+          </div>
+          <p class="footer-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+
+        <!-- Menu -->
+        <div class="footer-col">
+          <span>Menu</span>
+          <ul class="footer-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Quizzes</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <span>Contact</span>
+          <ul class="footer-list">
+            <li>
+              <img src="../images/envelope-regular.png" alt="" />
+              <a href="mailto:congdinh2021@gmail.com">congdinh2021@gmail.com</a>
+            </li>
+            <li>
+              <img src="../images/phone-solid.png" alt="" />
+              <a href="tel:+84944531536">+84 944 531 536</a>
+            </li>
+            <li>
+              <img src="../images/location-dot-solid.png" alt="" />
+              <a href=" Xuan Dinh, Bac Tu Liem, Ha Noi, Viet Nam"
+                >123 Xuan Dinh, Bac Tu Liem, Ha Noi, Viet Nam</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">© May 2024 - ReactJS 19</div>
+    </footer>
+  </body>
+</html>
