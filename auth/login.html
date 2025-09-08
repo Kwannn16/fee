@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login form</title>
+    <link rel="stylesheet" href="../css/login.css" />
+  </head>
+  <body>
+    <main>
+      <section class="login">
+        <!-- Method form -->
+        <form class="login-form" method="post">
+          <h2 class="form-title">Login</h2>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <div class="form-actions">
+            <a href="#" class="back-home">Back to Home</a>
+            <button type="submit" class="btn-login">Login</button>
+          </div>
+
+          <div class="extra-links">
+            <a href="#">Forgot password?</a>
+            <p>Don't have an account? <a href="#">Register</a></p>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
