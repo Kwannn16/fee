@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
   line-height: 1.5;
   color: #222;
   background: #f7f8fb;
@@ -25,7 +25,6 @@ img {
   margin: 0 auto;
 }
 
-/* UTILITIES */
 .flex {
   display: flex;
 }
@@ -50,8 +49,8 @@ header {
   gap: 8px;
 }
 .brand-logo img {
-  width: 24px;
-  height: 24px;
+  width: 71px;
+  height: 48px;
 }
 .nav-menu {
   display: flex;
@@ -65,8 +64,8 @@ header {
 }
 
 .avatar {
-  width: 28px;
-  height: 28px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   border: 1px solid #ddd;
   background: #fff;
@@ -108,6 +107,7 @@ header {
   background: #fff;
   padding: 12px 0;
   font-weight: 600;
+  border-right: 1px solid #ddd;
 }
 .sidebar-title {
   padding-left: 14px;
@@ -169,16 +169,26 @@ header {
 /* ========== FORM & FILTER ========== */
 .filter-grid {
   display: grid;
-  grid-template-columns: 1fr 200px;
+  grid-template-columns: 570px 220px;
   gap: 16px;
   padding-left: 14px;
+  max-width: 800px;
+  align-items: end;
 }
-.form-group {
+
+.form-group,
+.status-group {
   display: flex;
   flex-direction: column;
   gap: 6px;
   font-size: 14px;
+  width: 100%;
 }
+
+.form-group {
+  max-width: 570px;
+}
+
 .input,
 .select {
   height: 30px;
@@ -186,33 +196,60 @@ header {
   border-radius: 8px;
   padding: 0 12px;
 }
-.checkbox {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+
 .textarea {
+  min-height: 80px;
+  padding: 12px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 10px 12px;
-  min-height: 110px;
-  resize: vertical;
 }
+
+/* ========== FORM-GRID BORDER BOTTOM ========== */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  padding: 0 14px;
+  padding: 0px 14px;
+  border-bottom: 1px solid #ddd; /* Thêm border dưới trải dài hết form */
+  padding-bottom: 18px;
+  margin-bottom: 0;
 }
+
 .form-group.full {
   grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.form-group.full label {
+  margin-bottom: 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.checkbox input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  accent-color: #222;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  margin-right: 6px;
 }
 
 /* ========== BUTTONS ========== */
 .btn {
   padding: 7px 14px;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 4px;
   background: #fff;
   cursor: pointer;
   font-size: 16px;
@@ -252,7 +289,6 @@ header {
 }
 .icon-btn {
   border: 1px solid #ddd;
-  border-radius: 6px;
   cursor: pointer;
 }
 .icon-btn:hover {
@@ -307,13 +343,6 @@ header {
   font-size: 16px;
   padding: 10px 10px 0 10px;
   text-align: end;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  padding: 0px 14px;
 }
 
 .app-footer,
@@ -375,5 +404,3 @@ footer .footer-bottom {
   text-align: center;
   color: #666;
   font-size: 12px;
-  padding: 10px 24px;
-}

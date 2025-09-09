@@ -1,238 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Role Management</title>
-  <link rel="stylesheet" href="../css/role_management.css" />
-</head>
-<body>
-  <!-- ======= HEADER ======= -->
-  <header>
-    <nav class="navbar container flex justify-between align-center">
-      <a href="#" class="brand-logo flex align-center">
-        <img src="../images/logo.png" alt="Brand logo" />
-        <span>Quizzes</span>
-      </a>
-
-      <ul class="nav-menu flex">
-        <li class="nav-item"><a href="#">Home</a></li>
-        <li class="nav-item"><a href="#">Quizzes</a></li>
-        <li class="nav-item"><a href="#">Management</a></li>
-        <li class="nav-item"><a href="#">About</a></li>
-        <li class="nav-item"><a href="#">Contact</a></li>
-      </ul>
-
-      <div class="profile-menu">
-        <div class="authenticated">
-          <img class="avatar" src="../images/profile-avatar.png" alt="avatar" />
-          <ul class="profile-dropdown">
-            <li class="nav-item">Cong Dinh</li>
-            <li class="nav-item">Change Password</li>
-            <li class="nav-item">Logout</li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <!-- ======= MAIN (SIDEBAR + CONTENT) ======= -->
-  <main class="layout">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <h3 class="sidebar-title">Menu</h3>
-      <ul class="side-nav">
-        <li class="side-item">
-          <img src="../images/person-circle-question-solid.svg.png" alt="" class="icon" />
-          Quiz Management
-        </li>
-        <li class="side-item">
-          <img src="../images/question-solid.svg.png" alt="" class="icon" />
-          Question Management
-        </li>
-        <li class="side-item">
-          <img src="../images/user-solid.svg.png" alt="" class="icon" />
-          User Management
-        </li>
-        <li class="side-item active">
-          <img src="../images/user-shield-solid.svg.png" alt="" class="icon" />
-          Role Management
-        </li>
-      </ul>
-    </aside>
-
-    <!-- Content -->
-    <section class="content">
-      <div class="container">
-        <!-- Panel: Filter + Create -->
-        <div class="panel">
-          <div class="panel-header flex justify-between align-center">
-            <h4>Role Management</h4>
-          </div>
-
-          <div class="filter-grid">
-            <div class="form-group">
-              <label>Name</label>
-              <input type="text" class="input" placeholder="Enter role name to search"/>
-            </div>
-
-            <div class="form-group status-group">
-              <label>Status</label>
-              <label class="checkbox">
-                <input type="checkbox"/>
-                <span>Active</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- Hàng nút: Create bên trái, Clear/Search bên phải -->
-          <div class="panel-actions between">
-            <div>
-              <button class="btn btn-primary btn-icon">
-                <img src="../images/plus-solid.png" alt="" class="icon"/>
-                Create
-              </button>
-            </div>
-            <div class="flex" style="gap:10px;">
-              <button class="btn btn-icon">
-                <img src="../images/rotate-left-solid.png" alt="" class="icon"/>
-                Clear
-              </button>
-              <button class="btn btn-primary btn-icon">
-                <img src="../images/magnifying-glass-solid.svg.png" alt="" class="icon"/>
-                Search
-              </button>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Role Management</title>
+    <link rel="stylesheet" href="../css/role_management.css" />
+  </head>
+  <body>
+    <!-- ======= HEADER ======= -->
+    <header>
+      <nav class="navbar container flex justify-between align-center">
+        <a href="#" class="brand-logo flex align-center">
+          <img src="../images/logo.png" alt="Brand logo" />
+          <span>Quizzes</span>
+        </a>
+        <ul class="nav-menu flex">
+          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item"><a href="#">Quizzes</a></li>
+          <li class="nav-item"><a href="#">Management</a></li>
+          <li class="nav-item"><a href="#">About</a></li>
+          <li class="nav-item"><a href="#">Contact</a></li>
+        </ul>
+        <div class="profile-menu">
+          <div class="authenticated">
+            <img class="avatar" src="../images/profile-avatar.png" alt="avatar" />
+            <ul class="profile-dropdown">
+              <li class="nav-item">Cong Dinh</li>
+              <li class="nav-item">Change Password</li>
+              <li class="nav-item">Logout</li>
+            </ul>
           </div>
         </div>
+      </nav>
+    </header>
 
-        <!-- Panel: Table -->
-        <div class="panel">
-          <div class="panel-header">
-            <h4>Role List</h4>
+    <!-- ======= MAIN (SIDEBAR + CONTENT) ======= -->
+    <main class="layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h3 class="sidebar-title">Menu</h3>
+        <ul class="side-nav">
+          <li class="side-item">
+            <img src="../images/person-circle-question-solid.svg.png" alt="" class="icon" />
+            Quiz Management
+          </li>
+          <li class="side-item">
+            <img src="../images/question-solid.svg.png" alt="" class="icon" />
+            Question Management
+          </li>
+          <li class="side-item">
+            <img src="../images/user-solid.svg.png" alt="" class="icon" />
+            User Management
+          </li>
+          <li class="side-item active">
+            <img src="../images/user-shield-solid.svg.png" alt="" class="icon" />
+            Role Management
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Content -->
+      <section class="content">
+        <div class="container">
+          <!-- Panel: Filter + Create -->
+          <div class="panel">
+            <div class="panel-header flex justify-between align-center">
+              <h4>Role Management</h4>
+            </div>
+            <div class="filter-grid">
+              <div class="form-group">
+                <label for="filter-role-name">Name</label>
+                <input
+                  id="filter-role-name"
+                  type="text"
+                  class="input"
+                  placeholder="Enter role name to search"
+                />
+              </div>
+              <div class="form-group status-group">
+                <label for="filter-role-status">Status</label>
+                <label class="checkbox">
+                  <input id="filter-role-status" type="checkbox" />
+                  <span>Active</span>
+                </label>
+              </div>
+            </div>
+            <div class="panel-actions between">
+              <div>
+                <button class="btn btn-primary btn-icon" type="button">
+                  <img src="../images/plus-solid.png" alt="" class="icon" />
+                  Create
+                </button>
+              </div>
+              <div class="flex" style="gap: 10px">
+                <button class="btn btn-icon" type="button">
+                  <img src="../images/rotate-left-solid.png" alt="" class="icon" />
+                  Clear
+                </button>
+                <button class="btn btn-primary btn-icon" type="button">
+                  <img src="../images/magnifying-glass-solid.svg.png" alt="" class="icon" />
+                  Search
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div class="table-wrap">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Description</th>
-                  <th>Status</th>
-                  <th class="col-actions">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Admin</td>
-                  <td>Full Access</td>
-                  <td>Yes</td>
-                  <td class="action-cell">
-                    <button class="icon-btn">
-                      <img src="../images/pen-to-square-solid.svg.png" alt="Edit"/>
-                    </button>
-                    <button class="icon-btn danger">
-                      <img src="../images/trash-can-regular.svg.png" alt="Delete"/>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Editor</td>
-                  <td>Editable</td>
-                  <td>Yes</td>
-                  <td class="action-cell">
-                    <button class="icon-btn">
-                      <img src="../images/pen-to-square-solid.svg.png" alt="Edit"/>
-                    </button>
-                    <button class="icon-btn danger">
-                      <img src="../images/trash-can-regular.svg.png" alt="Delete"/>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>User</td>
-                  <td>Customer</td>
-                  <td>Yes</td>
-                  <td class="action-cell">
-                    <button class="icon-btn">
-                      <img src="../images/pen-to-square-solid.svg.png" alt="Edit"/>
-                    </button>
-                    <button class="icon-btn danger">
-                      <img src="../images/trash-can-regular.svg.png" alt="Delete"/>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <!-- Panel: Table -->
+          <div class="panel">
+            <div class="panel-header">
+              <h4>Role List</h4>
+            </div>
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th class="col-actions">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Admin</td>
+                    <td>Full Access</td>
+                    <td>Yes</td>
+                    <td class="action-cell">
+                      <button class="icon-btn" type="button">
+                        <img src="../images/pen-to-square-solid.svg.png" alt="Edit" />
+                      </button>
+                      <button class="icon-btn danger" type="button">
+                        <img src="../images/trash-can-regular.svg.png" alt="Delete" />
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Editor</td>
+                    <td>Editable</td>
+                    <td>Yes</td>
+                    <td class="action-cell">
+                      <button class="icon-btn" type="button">
+                        <img src="../images/pen-to-square-solid.svg.png" alt="Edit" />
+                      </button>
+                      <button class="icon-btn danger" type="button">
+                        <img src="../images/trash-can-regular.svg.png" alt="Delete" />
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>User</td>
+                    <td>Customer</td>
+                    <td>Yes</td>
+                    <td class="action-cell">
+                      <button class="icon-btn" type="button">
+                        <img src="../images/pen-to-square-solid.svg.png" alt="Edit" />
+                      </button>
+                      <button class="icon-btn danger" type="button">
+                        <img src="../images/trash-can-regular.svg.png" alt="Delete" />
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Pager row -->
+            <div class="pager-row">
+              <div class="page-size">
+                <label for="page-size-select">Items per page:</label>
+                <select id="page-size-select" class="select">
+                  <option>10</option>
+                  <option>20</option>
+                  <option>50</option>
+                </select>
+              </div>
+              <div class="pager">
+                <button class="pager-btn" type="button">
+                  <img src="../images/angles-left-solid.png" alt="First" />
+                </button>
+                <button class="pager-btn" type="button">
+                  <img src="../images/angle-left-solid.png" alt="Prev" />
+                </button>
+                <button class="page-num current" type="button">1</button>
+                <button class="page-num" type="button">2</button>
+                <button class="page-num" type="button">3</button>
+                <button class="pager-btn" type="button">
+                  <img src="../images/angle-right-solid.png" alt="Next" />
+                </button>
+                <button class="pager-btn" type="button">
+                  <img src="../images/angles-right-solid.png" alt="Last" />
+                </button>
+              </div>
+              <div class="range">1–10 of 32</div>
+            </div>
           </div>
 
-          <!-- Pager row -->
-          <div class="pager-row">
-            <div class="page-size">
-              <label>Items per page:</label>
-              <select class="select">
-                <option>10</option>
-                <option>20</option>
-                <option>50</option>
-              </select>
+          <!-- Panel: Add Role -->
+          <div class="panel">
+            <div class="panel-header">
+              <h4>Add Role</h4>
             </div>
-            <div class="pager">
-              <button class="pager-btn">
-                <img src="../images/angles-left-solid.png" alt="First"/>
+            <form class="form-grid">
+              <div class="form-group">
+                <label for="role-name">Name</label>
+                <input id="role-name" class="input" placeholder="Enter role name" />
+              </div>
+              <div class="form-group">
+                <label for="role-desc">Description</label>
+                <textarea id="role-desc" class="textarea" placeholder="Enter your email"></textarea>
+              </div>
+              <div class="form-group full">
+                <label for="role-status">Status</label>
+                <label class="checkbox">
+                  <input id="role-status" type="checkbox" />
+                  <span>Active</span>
+                </label>
+              </div>
+            </form>
+            <div class="panel-actions end">
+              <button class="btn btn-icon" type="button">
+                <img src="../images/rotate-left-solid.png" alt="" />
+                Cancel
               </button>
-              <button class="pager-btn">
-                <img src="../images/angle-left-solid.png" alt="Prev"/>
-              </button>
-              <button class="page-num current">1</button>
-              <button class="page-num">2</button>
-              <button class="page-num">3</button>
-              <button class="pager-btn">
-                <img src="../images/angle-right-solid.png" alt="Next"/>
-              </button>
-              <button class="pager-btn">
-                <img src="../images/angles-right-solid.png" alt="Last"/>
+              <button class="btn btn-primary btn-icon" type="submit">
+                <img src="../images/floppy-disk-regular.png" alt="" />
+                Save
               </button>
             </div>
-            <div class="range">1–10 of 32</div>
           </div>
         </div>
-
-        <!-- Panel: Add Role -->
-        <div class="panel">
-          <div class="panel-header">
-            <h4>Add Role</h4>
-          </div>
-
-          <form class="form-grid">
-            <div class="form-group">
-              <label>Name</label>
-              <input class="input" placeholder="Enter role name"/>
-            </div>
-            <div class="form-group">
-              <label>Description</label>
-              <textarea class="textarea" placeholder="Enter your email"></textarea>
-            </div>
-
-            <div class="form-group full">
-              <label class="checkbox">
-                <input type="checkbox"/>
-                <span>Active</span>
-              </label>
-            </div>
-          </form>
-
-          <div class="panel-actions end">
-            <button class="btn btn-icon">
-              <img src="../images/rotate-left-solid.png" alt=""/>
-              Cancel
-            </button>
-            <button class="btn btn-primary btn-icon">
-              <img src="../images/floppy-disk-regular.png" alt=""/>
-              Save
-            </button>
-          </div>
-        </div>
-
         <footer>
           <div class="container footer-top">
             <div>
@@ -245,7 +240,6 @@
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
             </div>
-
             <div class="footer-col">
               <span>Menu</span>
               <ul class="footer-list">
@@ -255,15 +249,12 @@
                 <li><a href="#">Contact</a></li>
               </ul>
             </div>
-
             <div class="footer-col">
               <span>Contact</span>
               <ul class="footer-list">
                 <li>
                   <img src="../images/envelope-regular.png" alt="" />
-                  <a href="mailto:congdinh2021@gmail.com"
-                    >congdinh2021@gmail.com</a
-                  >
+                  <a href="mailto:congdinh2021@gmail.com">congdinh2021@gmail.com</a>
                 </li>
                 <li>
                   <img src="../images/phone-solid.png" alt="" />
@@ -278,8 +269,7 @@
           </div>
           <div class="footer-bottom">© May 2024 - ReactJS 19</div>
         </footer>
-      </div>
-    </section>
-  </main>
-</body>
+      </section>
+    </main>
+  </body>
 </html>
