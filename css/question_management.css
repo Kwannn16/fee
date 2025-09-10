@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
   line-height: 1.5;
   color: #222;
   background: #f7f8fb;
@@ -46,10 +46,12 @@ header {
   font-size: 20px;
   color: #000;
   gap: 8px;
+  display: flex;
+  align-items: center;
 }
 .brand-logo img {
-  width: 24px;
-  height: 24px;
+  width: 71px;
+  height: 48px;
 }
 .nav-menu {
   display: flex;
@@ -62,8 +64,8 @@ header {
   color: #2b8cff;
 }
 .avatar {
-  width: 28px;
-  height: 28px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   border: 1px solid #ddd;
   background: #fff;
@@ -106,6 +108,7 @@ header {
   background: #fff;
   padding: 12px 0;
   font-weight: 600;
+  border-right: 1px solid #ddd;
 }
 .sidebar-title {
   padding-left: 14px;
@@ -129,6 +132,9 @@ header {
 .side-item:hover {
   background: #b1bed3;
 }
+.side-item.active {
+  background: #d9e7ff;
+}
 .icon {
   width: 16px;
   height: 16px;
@@ -150,31 +156,41 @@ header {
   margin-bottom: 12px;
 }
 .panel-actions {
-  padding: 0 14px 0 14px;
   display: flex;
   justify-content: flex-end;
   gap: 10px;
   margin-top: 12px;
+  padding: 0 14px;
 }
 .panel-actions.between {
   justify-content: space-between;
 }
+.panel-actions.end {
+  justify-content: flex-end;
+}
 
-/* FORM */
+/* FORM & FILTER */
 .filter-grid {
   display: grid;
-  grid-template-columns: 1fr 200px;
+  grid-template-columns: 570px 570px 220px;
   gap: 16px;
   padding-left: 14px;
+  max-width: 1400px;
+  align-items: end;
 }
-.form-group.full {
-  grid-column: 1 / -1;
-}
-.form-group {
+.form-group,
+.status-group {
   display: flex;
   flex-direction: column;
   gap: 6px;
   font-size: 14px;
+  width: 100%;
+}
+.form-group {
+  max-width: 570px;
+}
+.status-group {
+  max-width: 220px;
 }
 .input,
 .select {
@@ -182,32 +198,68 @@ header {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 0 12px;
+  width: 100%;
+  max-width: 570px;
 }
-.checkbox {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+
+/* Add Question: textarea và select cùng dòng, checkbox dưới textarea */
+.qa-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 0 14px;
+  align-items: start;
 }
+.qa-grid .form-group {
+  max-width: 100%;
+}
+.checkbox-under {
+  margin-top: 8px;
+}
+
+/* Nút Show Answers thẳng hàng textarea */
+.show-question-btn {
+  align-self: flex-start;
+  margin-left: 14px;
+}
+
+/* BUTTONS */
 .btn {
   padding: 7px 14px;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 4px;
   background: #fff;
   cursor: pointer;
   font-size: 16px;
   color: #333;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background: #38b6ff;
+  color: #fff;
 }
 .btn:hover {
   background: #b1bed3;
 }
-.btn-primary {
-  background: rgba(56, 182, 255, 1);
-  color: #fff;
+.btn-icon img {
+  width: 18px;
+  height: 18px;
 }
-.btn-icon {
-  display: inline-flex;
+.icon-btn {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
   align-items: center;
-  gap: 8px;
+  background: #fff;
+}
+.icon-btn:hover {
+  background: #a0adcf;
+}
+.icon-btn.danger:hover {
+  background: #d3d7df;
 }
 
 /* TABLE */
@@ -222,28 +274,15 @@ header {
   font-size: 16px;
   text-align: left;
 }
-.table tbody tr:nth-child(odd) {
-  background: rgba(232, 232, 232, 1);
+.table tbody tr:nth-child(even) {
+  background: #f7f8fb;
 }
 .action-cell {
   display: flex;
-  gap: 8px;
-  align-items: center;
-}
-.icon-btn {
-  border: none;
-  background: transparent;
-  padding: 0 4px;
-  cursor: pointer;
-}
-.icon-btn:hover {
-  opacity: 0.8;
-}
-.icon-btn.danger:hover {
-  opacity: 0.9;
+  gap: 5px;
 }
 .col-actions {
-  width: 120px;
+  width: 110px;
 }
 
 /* PAGER */
@@ -273,7 +312,7 @@ header {
 .page-num {
   width: 26px;
   height: 26px;
-  border: 1px solid rgba(56, 182, 255, 0.6);
+  border: 1px solid #d3d7df;
   border-radius: 50%;
   background: #fff;
   cursor: pointer;
@@ -281,15 +320,11 @@ header {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: rgba(56, 182, 255, 1);
+  color: #38b6ff;
 }
 .pager-btn img {
   width: 12px;
   height: 12px;
-}
-.page-num.current {
-  background: rgba(56, 182, 255, 0.08);
-  border-color: rgba(56, 182, 255, 1);
 }
 .range {
   font-size: 16px;
@@ -297,7 +332,7 @@ header {
   text-align: end;
 }
 
-/* FORM GRID BELOW */
+/* FORM GRID */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -307,14 +342,6 @@ header {
 .form-group.full {
   grid-column: 1 / -1;
 }
-
-.qa-grid {
-  grid-template-columns: 1fr 280px;
-}
-.qa-grid .form-group.full {
-  grid-column: 1 / -1;
-}
-
 .textarea {
   min-height: 96px;
   border: 1px solid #ddd;
@@ -326,10 +353,55 @@ header {
   line-height: 1.5;
 }
 
-.panel-actions.end {
-  justify-content: flex-end;
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .filter-grid {
+    grid-template-columns: 1fr 1fr 220px;
+    max-width: 100%;
+  }
+  .qa-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+    padding: 0 8px;
+  }
+  .show-question-btn {
+    margin-left: 0;
+    margin-top: 12px;
+  }
 }
-
-.col-actions {
-  width: 110px;
+@media (max-width: 700px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    display: none;
+  }
+  .container {
+    max-width: 100%;
+    padding: 0 8px;
+  }
+  .filter-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    padding-left: 0;
+  }
+  .form-group,
+  .status-group {
+    max-width: 100%;
+  }
+  .input,
+  .select {
+    max-width: 100%;
+  }
+  .form-grid,
+  .qa-grid {
+    grid-template-columns: 1fr;
+    padding: 0 8px;
+  }
+  .panel-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding-right: 0;
+  }
 }

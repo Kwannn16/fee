@@ -14,7 +14,6 @@
           <img src="../images/logo.png" alt="Brand logo" />
           <span>Quizzes</span>
         </a>
-
         <ul class="nav-menu flex">
           <li class="nav-item"><a href="#">Home</a></li>
           <li class="nav-item"><a href="#">Quizzes</a></li>
@@ -22,14 +21,9 @@
           <li class="nav-item"><a href="#">About</a></li>
           <li class="nav-item"><a href="#">Contact</a></li>
         </ul>
-
         <div class="profile-menu">
           <div class="authenticated">
-            <img
-              class="avatar"
-              src="../images/profile-avatar.png"
-              alt="avatar"
-            />
+            <img class="avatar" src="../images/profile-avatar.png" alt="avatar" />
             <ul class="profile-dropdown">
               <li class="nav-item">Cong Dinh</li>
               <li class="nav-item">Change Password</li>
@@ -46,11 +40,7 @@
         <h3 class="sidebar-title">Menu</h3>
         <ul class="side-nav">
           <li class="side-item">
-            <img
-              src="../images/person-circle-question-solid.svg.png"
-              alt=""
-              class="icon"
-            />
+            <img src="../images/person-circle-question-solid.svg.png" alt="" class="icon" />
             Quiz Management
           </li>
           <li class="side-item active">
@@ -62,11 +52,7 @@
             User Management
           </li>
           <li class="side-item">
-            <img
-              src="../images/user-shield-solid.svg.png"
-              alt=""
-              class="icon"
-            />
+            <img src="../images/user-shield-solid.svg.png" alt="" class="icon" />
             Role Management
           </li>
         </ul>
@@ -80,52 +66,44 @@
             <div class="panel-header flex justify-between align-center">
               <h4>Question Management</h4>
             </div>
-
             <div class="filter-grid">
               <div class="form-group">
-                <label>Name</label>
+                <label for="search-question">Name</label>
                 <input
+                  id="search-question"
                   type="text"
                   class="input"
                   placeholder="Enter question name to search"
                 />
               </div>
               <div class="form-group">
-                <label>Type</label>
-                <select class="select">
+                <label for="search-type">Type</label>
+                <select id="search-type" class="select">
                   <option>Select Item</option>
                 </select>
               </div>
-              <div class="form-group status-group full">
-                <label>Status</label>
-                <label class="checkbox"
-                  ><input type="checkbox" /><span>Active</span></label
-                >
+              <div class="form-group status-group">
+                <label for="search-status">Status</label>
+                <label class="checkbox">
+                  <input id="search-status" type="checkbox" />
+                  <span>Active</span>
+                </label>
               </div>
             </div>
-
             <div class="panel-actions between">
-              <div class="actions-left">
-                <button class="btn btn-primary btn-icon">
+              <div>
+                <button class="btn btn-primary btn-icon" type="button">
                   <img src="../images/plus-solid.png" alt="" class="icon" />
                   Create
                 </button>
               </div>
-              <div class="actions-right">
-                <button class="btn btn-icon">
-                  <img
-                    src="../images/rotate-left-solid.png"
-                    alt=""
-                    class="icon"
-                  />
+              <div class="flex" style="gap: 10px">
+                <button class="btn btn-icon" type="button">
+                  <img src="../images/rotate-left-solid.png" alt="" class="icon" />
                   Clear
                 </button>
-                <button class="btn btn-primary btn-icon">
-                  <img
-                    src="../images/magnifying-glass-solid.svg.png"
-                    alt=""
-                    class="icon"
-                  />
+                <button class="btn btn-primary btn-icon" type="button">
+                  <img src="../images/magnifying-glass-solid.svg.png" alt="" class="icon" />
                   Search
                 </button>
               </div>
@@ -137,7 +115,6 @@
             <div class="panel-header">
               <h4>Question List</h4>
             </div>
-
             <div class="table-wrap">
               <table class="table">
                 <thead>
@@ -156,228 +133,41 @@
                     <td>4</td>
                     <td>Yes</td>
                     <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
+                      <button class="icon-btn" type="button">
+                        <img src="../images/pen-to-square-solid.svg.png" alt="Edit" />
                       </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
+                      <button class="icon-btn danger" type="button">
+                        <img src="../images/trash-can-regular.svg.png" alt="Delete" />
                       </button>
                     </td>
                   </tr>
-                  <tr>
-                    <td>Who is the inventor of the World Wide Web?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>Yes</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
-                      </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Where is Viet Nam?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>Yes</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
-                      </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>What is the capital of France?</td>
-                    <td>SingleChoice</td>
-                    <td>4</td>
-                    <td>cell</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
-                      </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Who is the inventor of the alternating current?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>cell</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
-                      </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Where is Australia?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>cell</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
-                      </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Who is the inventor of the ATM?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>cell</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
-                      </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Where is France?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>cell</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
-                      </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Where is the United States?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>cell</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
-                      </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Who is the inventor of the washing machine?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>cell</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
-                      </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
+                  <!-- ...other rows... -->
                 </tbody>
               </table>
             </div>
-
-            <!-- Phân trang -->
             <div class="pager-row">
               <div class="page-size">
-                <label>Items per page:</label>
-                <select class="select">
+                <label for="page-size-select">Items per page:</label>
+                <select id="page-size-select" class="select">
                   <option>10</option>
                   <option>20</option>
                   <option>50</option>
                 </select>
               </div>
               <div class="pager">
-                <button class="pager-btn">
+                <button class="pager-btn" type="button">
                   <img src="../images/angles-left-solid.png" alt="First" />
                 </button>
-                <button class="pager-btn">
+                <button class="pager-btn" type="button">
                   <img src="../images/angle-left-solid.png" alt="Prev" />
                 </button>
-                <button class="page-num">1</button>
-                <button class="page-num">2</button>
-                <button class="page-num">3</button>
-                <button class="pager-btn">
+                <button class="page-num" type="button">1</button>
+                <button class="page-num" type="button">2</button>
+                <button class="page-num" type="button">3</button>
+                <button class="pager-btn" type="button">
                   <img src="../images/angle-right-solid.png" alt="Next" />
                 </button>
-                <button class="pager-btn">
+                <button class="pager-btn" type="button">
                   <img src="../images/angles-right-solid.png" alt="Last" />
                 </button>
               </div>
@@ -388,52 +178,34 @@
           <!-- Panel: Add Question -->
           <div class="panel">
             <div class="panel-header"><h4>Add Question</h4></div>
-
             <form class="form-grid qa-grid">
-              <div class="form-group full">
-                <label>Content</label>
-                <textarea
-                  class="textarea"
-                  placeholder="Enter question content"
-                ></textarea>
-              </div>
-
               <div class="form-group">
-                <label>Question Type</label>
-                <select class="select">
+                <label for="add-content">Content</label>
+                <textarea id="add-content" class="textarea" placeholder="Enter question content"></textarea>
+                <label class="checkbox checkbox-under">
+                  <input type="checkbox" />
+                  <span>Active</span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label for="add-type">Question Type</label>
+                <select id="add-type" class="select">
                   <option>Select Question Type</option>
                 </select>
               </div>
-
-              <div class="form-group">
-                <label>Status</label>
-                <label class="checkbox"
-                  ><input type="checkbox" /><span>Active</span></label
-                >
-              </div>
             </form>
-
             <div class="panel-actions between">
-              <button class="btn btn-primary btn-icon">
+              <button class="btn btn-primary btn-icon show-question-btn" type="button">
                 <img src="../images/plus-solid.png" alt="" class="icon" />
                 Show Answers
               </button>
-
-              <div class="actions-right">
-                <button class="btn btn-icon">
-                  <img
-                    src="../images/rotate-left-solid.png"
-                    alt=""
-                    class="icon"
-                  />
+              <div class="flex" style="gap: 10px">
+                <button class="btn btn-icon" type="button">
+                  <img src="../images/rotate-left-solid.png" alt="" class="icon" />
                   Cancel
                 </button>
-                <button class="btn btn-primary btn-icon">
-                  <img
-                    src="../images/floppy-disk-regular.png"
-                    alt=""
-                    class="icon"
-                  />
+                <button class="btn btn-primary btn-icon" type="submit">
+                  <img src="../images/floppy-disk-regular.png" alt="" class="icon" />
                   Save
                 </button>
               </div>
@@ -443,7 +215,6 @@
           <!-- Panel: Answer List -->
           <div class="panel">
             <div class="panel-header"><h4>Answer List</h4></div>
-
             <div class="table-wrap">
               <table class="table">
                 <thead>
@@ -460,83 +231,20 @@
                     <td>True</td>
                     <td>Yes</td>
                     <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
+                      <button class="icon-btn" type="button">
+                        <img src="../images/pen-to-square-solid.svg.png" alt="Edit" />
                       </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
+                      <button class="icon-btn danger" type="button">
+                        <img src="../images/trash-can-regular.svg.png" alt="Delete" />
                       </button>
                     </td>
                   </tr>
-                  <tr>
-                    <td>Alexander Graham Bell</td>
-                    <td>False</td>
-                    <td>Yes</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
-                      </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Albert Einstein</td>
-                    <td>False</td>
-                    <td>Yes</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
-                      </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Charles Babbage</td>
-                    <td>False</td>
-                    <td>cell</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
-                      </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
+                  <!-- ...other rows... -->
                 </tbody>
               </table>
             </div>
-
             <div class="panel-actions end">
-              <button class="btn btn-primary btn-icon">
+              <button class="btn btn-primary btn-icon" type="button">
                 <img src="../images/plus-solid.png" alt="" class="icon" />
                 Add
               </button>
@@ -545,50 +253,4 @@
 
           <!-- Panel: Add Answer -->
           <div class="panel">
-            <div class="panel-header"><h4>Add Answer</h4></div>
-
-            <form class="form-grid">
-              <div class="form-group full">
-                <label>Description</label>
-                <input class="input" placeholder="Enter your email" />
-              </div>
-
-              <div class="form-group">
-                <label>Is Correct?</label>
-                <label class="checkbox"
-                  ><input type="checkbox" /><span></span
-                ></label>
-              </div>
-
-              <div class="form-group">
-                <label>Status</label>
-                <label class="checkbox"
-                  ><input type="checkbox" /><span>Active</span></label
-                >
-              </div>
-            </form>
-
-            <div class="panel-actions end">
-              <button class="btn btn-icon">
-                <img
-                  src="../images/rotate-left-solid.png"
-                  alt=""
-                  class="icon"
-                />
-                Cancel
-              </button>
-              <button class="btn btn-primary btn-icon">
-                <img
-                  src="../images/floppy-disk-regular.png"
-                  alt=""
-                  class="icon"
-                />
-                Save
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-  </body>
-</html>
+            <div class=
