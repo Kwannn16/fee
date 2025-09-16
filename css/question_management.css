@@ -165,6 +165,15 @@ header {
 .panel-actions.between {
   justify-content: space-between;
 }
+
+/* Custom row for filter panel actions */
+.filter-actions-row {
+  margin-top: 16px;
+}
+.filter-actions-btns {
+  display: flex;
+  gap: 10px;
+}
 .panel-actions.end {
   justify-content: flex-end;
 }
@@ -172,11 +181,17 @@ header {
 /* FORM & FILTER */
 .filter-grid {
   display: grid;
-  grid-template-columns: 570px 570px 220px;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
   padding-left: 14px;
-  max-width: 1400px;
+  max-width: 1200px;
   align-items: end;
+}
+.status-row {
+  grid-column: 1 / -1;
+  max-width: 220px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .form-group,
 .status-group {
@@ -274,8 +289,11 @@ header {
   font-size: 16px;
   text-align: left;
 }
+.table tbody tr:nth-child(odd) {
+  background: #e8e8e8;
+}
 .table tbody tr:nth-child(even) {
-  background: #f7f8fb;
+  background: #fff;
 }
 .action-cell {
   display: flex;
@@ -283,6 +301,36 @@ header {
 }
 .col-actions {
   width: 110px;
+}
+.icon-btn {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+.icon-btn:hover {
+  background: #a0adcf;
+}
+.icon-btn.danger img {
+  filter: none;
+  color: #ff2222;
+}
+.icon-btn.danger:hover {
+  background: #d3d7df;
+}
+.icon-btn.danger img {
+  color: #ff2222;
+}
+.icon-btn img[alt="Edit"] {
+  color: #38b6ff;
+  filter: invert(49%) sepia(99%) saturate(749%) hue-rotate(176deg) brightness(99%) contrast(101%);
+}
+.icon-btn.danger img[alt="Delete"] {
+  color: #ff2222;
+  filter: invert(32%) sepia(99%) saturate(7499%) hue-rotate(357deg) brightness(99%) contrast(101%);
 }
 
 /* PAGER */
