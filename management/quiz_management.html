@@ -1,560 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz Management</title>
-    <link rel="stylesheet" href="../css/quiz_management.css" />
-  </head>
-  <body>
-    <!-- ======= HEADER ======= -->
-    <header>
-      <nav class="navbar container flex justify-between align-center">
-        <a href="#" class="brand-logo flex align-center">
-          <img src="../images/logo.png" alt="Brand logo" />
-          <span>Quizzes</span>
-        </a>
-
-        <ul class="nav-menu flex">
-          <li class="nav-item"><a href="#">Home</a></li>
-          <li class="nav-item"><a href="#">Quizzes</a></li>
-          <li class="nav-item"><a href="#">Management</a></li>
-          <li class="nav-item"><a href="#">About</a></li>
-          <li class="nav-item"><a href="#">Contact</a></li>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Management</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-['Inter',sans-serif] leading-[1.5] text-[#222] bg-[#f7f8fb]">
+<!-- ======= HEADER ======= -->
+<header class="bg-white border-b border-[#ddd]">
+  <nav class="flex justify-between items-center h-[56px] max-w-[1180px] mx-auto">
+    <a href="#" class="flex items-center text-[20px] text-black gap-2">
+      <img src="../images/logo.png" alt="Brand logo" class="w-[71px] h-[48px]" />
+      <span>Quizzes</span>
+    </a>
+    <ul class="flex gap-6">
+      <li><a href="#" class="text-[#333] hover:text-[#2b8cff]">Home</a></li>
+      <li><a href="#" class="text-[#333] hover:text-[#2b8cff]">Quizzes</a></li>
+      <li><a href="#" class="text-[#333] hover:text-[#2b8cff]">Management</a></li>
+      <li><a href="#" class="text-[#333] hover:text-[#2b8cff]">About</a></li>
+      <li><a href="#" class="text-[#333] hover:text-[#2b8cff]">Contact</a></li>
+    </ul>
+    <div>
+      <div class="relative group">
+        <img class="w-12 h-12 rounded-full border border-[#ddd] bg-white cursor-pointer" src="../images/profile-avatar.png" alt="avatar" />
+        <ul class="absolute right-0 top-10 bg-white border border-[#ddd] rounded-lg p-2 min-w-[180px] hidden group-hover:block shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+          <li class="p-2 rounded text-sm hover:bg-[#f5f7fa]">Cong Dinh</li>
+          <li class="p-2 rounded text-sm hover:bg-[#f5f7fa]">Change Password</li>
+          <li class="p-2 rounded text-sm hover:bg-[#f5f7fa]">Logout</li>
         </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 
-        <div class="profile-menu">
-          <div class="authenticated">
-            <img
-              class="avatar"
-              src="../images/profile-avatar.png"
-              alt="avatar"
+<main class="grid grid-cols-[240px_1fr] gap-0 max-[700px]:grid-cols-1">
+  <aside class="bg-white py-3 font-semibold border-r border-[#ddd] max-[700px]:hidden">
+    <h3 class="pl-[14px] my-[6px] mb-[10px] text-[16px]">Menu</h3>
+    <ul class="flex flex-col gap-2.5">
+      <li class="flex items-center gap-2 p-[10px_12px] border-b border-[#ddd] text-[15px] cursor-pointer bg-[#d9e7ff]">
+        <img src="../images/person-circle-question-solid.svg.png" alt="" class="w-4 h-4" />
+        Quiz Management
+      </li>
+      <li class="flex items-center gap-2 p-[10px_12px] border-b border-[#ddd] text-[15px] cursor-pointer hover:bg-[#b1bed3]">
+        <img src="../images/question-solid.svg.png" alt="" class="w-4 h-4" />
+        Question Management
+      </li>
+      <li class="flex items-center gap-2 p-[10px_12px] border-b border-[#ddd] text-[15px] cursor-pointer hover:bg-[#b1bed3]">
+        <img src="../images/user-solid.svg.png" alt="" class="w-4 h-4" />
+        User Management
+      </li>
+      <li class="flex items-center gap-2 p-[10px_12px] border-b border-[#ddd] text-[15px] cursor-pointer hover:bg-[#b1bed3]">
+        <img src="../images/user-shield-solid.svg.png" alt="" class="w-4 h-4" />
+        Role Management
+      </li>
+    </ul>
+  </aside>
+
+  <section class="content">
+    <div class="max-w-[1180px] mx-auto">
+      <!-- Panel: Filter + Create -->
+      <div class="border border-[#ddd] rounded-lg bg-white py-[14px] my-[13px]">
+        <div class="flex items-center border-b border-[#b1bed3] p-[10px] mb-3">
+          <h4 class="text-[16px] font-semibold">Quiz Management</h4>
+        </div>
+        <div class="grid grid-cols-2 gap-4 px-[14px] items-start max-[700px]:grid-cols-1 max-[700px]:px-2">
+          <div class="flex flex-col gap-1.5 text-[14px] w-full">
+            <label>Name</label>
+            <input
+                    type="text"
+                    class="h-[30px] border border-[#ddd] rounded-lg px-3 w-full"
+                    placeholder="Enter role name to search"
             />
-            <ul class="profile-dropdown">
-              <li class="nav-item">Cong Dinh</li>
-              <li class="nav-item">Change Password</li>
-              <li class="nav-item">Logout</li>
-            </ul>
+          </div>
+          <div class="flex flex-col gap-1.5 text-[14px] w-full">
+            <label>Status</label>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" class="w-6 h-6 accent-[#222] rounded border border-[#bbb]" />
+              <span>Active</span>
+            </label>
           </div>
         </div>
-      </nav>
-    </header>
-
-    <!-- ======= MAIN (SIDEBAR + CONTENT) ======= -->
-    <main class="layout">
-      <aside class="sidebar">
-        <h3 class="sidebar-title">Menu</h3>
-        <ul class="side-nav">
-          <li class="side-item active">
-            <img
-              src="../images/person-circle-question-solid.svg.png"
-              alt=""
-              class="icon"
-            />
-            Quiz Management
-          </li>
-          <li class="side-item">
-            <img src="../images/question-solid.svg.png" alt="" class="icon" />
-            Question Management
-          </li>
-          <li class="side-item">
-            <img src="../images/user-solid.svg.png" alt="" class="icon" />
-            User Management
-          </li>
-          <li class="side-item">
-            <img
-              src="../images/user-shield-solid.svg.png"
-              alt=""
-              class="icon"
-            />
-            Role Management
-          </li>
-        </ul>
-      </aside>
-
-      <!-- Content: thay đổi phần main theo ảnh mẫu -->
-      <section class="content">
-        <div class="container">
-          <!-- Panel: Filter + Create -->
-          <div class="panel">
-            <div class="panel-header flex justify-between align-center">
-              <h4>Quiz Management</h4>
-            </div>
-
-            <div class="filter-grid">
-              <div class="form-group">
-                <label>Name</label>
-                <input
-                  type="text"
-                  class="input"
-                  placeholder="Enter role name to search"
-                />
-              </div>
-              <div class="form-group status-group">
-                <label>Status</label>
-                <label class="checkbox">
-                  <input type="checkbox" />
-                  <span>Active</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="panel-actions">
-              <button
-                class="btn btn-primary btn-icon"
-                style="margin-right: 830px"
-              >
-                <img src="../images/plus-solid.png" alt="" class="icon" />
-                Create
-              </button>
-              <button class="btn btn-icon">
-                <img
-                  src="../images/rotate-left-solid.png"
-                  alt=""
-                  class="icon"
-                />
-                Clear
-              </button>
-              <button class="btn btn-primary btn-icon">
-                <img
-                  src="../images/magnifying-glass-solid.svg.png"
-                  alt=""
-                  class="icon"
-                />
-                Search
-              </button>
-            </div>
+        <div class="flex justify-between items-center mt-4 px-[14px]">
+          <button class="inline-flex items-center gap-2 px-[14px] py-[7px] border border-[#ddd] rounded bg-[#38b6ff] text-white text-[16px]">
+            <img src="../images/plus-solid.png" alt="" class="w-[18px] h-[18px]" />
+            Create
+          </button>
+          <div class="flex gap-2">
+            <button class="inline-flex items-center gap-2 px-[14px] py-[7px] border border-[#ddd] rounded bg-white text-[#333] text-[16px] hover:bg-[#b1bed3]">
+              <img src="../images/rotate-left-solid.png" alt="" class="w-[18px] h-[18px]" />
+              Clear
+            </button>
+            <button class="inline-flex items-center gap-2 px-[14px] py-[7px] border border-[#ddd] rounded bg-[#38b6ff] text-white text-[16px]">
+              <img src="../images/magnifying-glass-solid.svg.png" alt="" class="w-[18px] h-[18px]" />
+              Search
+            </button>
           </div>
+        </div>
+      </div>
 
-          <!-- Panel: Quiz List -->
-          <div class="panel">
-            <div class="panel-header">
-              <h4>Quiz List</h4>
-            </div>
-            <div class="table-wrap">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>header</th>
-                    <th>Description</th>
-                    <th>Description</th>
-                    <th>Description</th>
-                    <th>Description</th>
-                    <th>Status</th>
-                    <th class="col-actions">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <img class="thumb" src="../images/capitals..png" alt="" />
-                    </td>
-                    <td>Capitals of Country</td>
-                    <td>Test your knowledge of country capitals</td>
-                    <td>15m</td>
-                    <td>7</td>
-                    <td>Yes</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
+      <!-- Panel: Quiz List -->
+      <div class="border border-[#ddd] rounded-lg bg-white py-[14px] my-[13px]">
+        <div class="flex items-center border-b border-[#b1bed3] p-[10px] mb-3">
+          <h4 class="text-[16px] font-semibold">Quiz List</h4>
+        </div>
+        <div class="table-wrap">
+          <table class="table-auto w-full">
+            <thead>
+            <tr class="bg-[#f9fafb] text-[#666] text-[14px]">
+              <th class="py-2 px-4 border-b border-[#ddd]">header</th>
+              <th class="py-2 px-4 border-b border-[#ddd]">Description</th>
+              <th class="py-2 px-4 border-b border-[#ddd]">Description</th>
+              <th class="py-2 px-4 border-b border-[#ddd]">Description</th>
+              <th class="py-2 px-4 border-b border-[#ddd]">Description</th>
+              <th class="py-2 px-4 border-b border-[#ddd]">Status</th>
+              <th class="py-2 px-4 border-b border-[#ddd] text-center">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="hover:bg-[#f5f7fa]">
+              <td class="py-3 px-4 border-b border-[#ddd]">
+                <img class="thumb" src="../images/capitals..png" alt="" />
+              </td>
+              <td class="py-3 px-4 border-b border-[#ddd]">Capitals of Country</td>
+              <td class="py-3 px-4 border-b border-[#ddd]">Test your knowledge of country capitals</td>
+              <td class="py-3 px-4 border-b border-[#ddd]">15m</td>
+              <td class="py-3 px-4 border-b border-[#ddd]">7</td>
+              <td class="py-3 px-4 border-b border-[#ddd]">Yes</td>
+              <td class="py-3 px-4 border-b border-[#ddd] text-center">
+                <button class="icon-btn">
+                  <img
                           src="../images/pen-to-square-solid.svg.png"
                           alt="Edit"
-                        />
-                      </button>
-                      <button class="icon-btn danger">
-                        <img
+                  />
+                </button>
+                <button class="icon-btn danger">
+                  <img
                           src="../images/trash-can-regular.svg.png"
                           alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img
+                  />
+                </button>
+              </td>
+            </tr>
+            <tr class="hover:bg-[#f5f7fa]">
+              <td class="py-3 px-4 border-b border-[#ddd]">
+                <img
                         class="thumb"
                         src="../images/capitals. (1).png"
                         alt=""
-                      />
-                    </td>
-                    <td>Inventors and Inventions</td>
-                    <td>
-                      Test your knowledge of inventors and their inventions
-                    </td>
-                    <td>20m</td>
-                    <td>10</td>
-                    <td>Yes</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
+                />
+              </td>
+              <td class="py-3 px-4 border-b border-[#ddd]">Inventors and Inventions</td>
+              <td class="py-3 px-4 border-b border-[#ddd]">
+                Test your knowledge of inventors and their inventions
+              </td>
+              <td class="py-3 px-4 border-b border-[#ddd]">20m</td>
+              <td class="py-3 px-4 border-b border-[#ddd]">10</td>
+              <td class="py-3 px-4 border-b border-[#ddd]">Yes</td>
+              <td class="py-3 px-4 border-b border-[#ddd] text-center">
+                <button class="icon-btn">
+                  <img
                           src="../images/pen-to-square-solid.svg.png"
                           alt="Edit"
-                        />
-                      </button>
-                      <button class="icon-btn danger">
-                        <img
+                  />
+                </button>
+                <button class="icon-btn danger">
+                  <img
                           src="../images/trash-can-regular.svg.png"
                           alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img
+                  />
+                </button>
+              </td>
+            </tr>
+            <tr class="hover:bg-[#f5f7fa]">
+              <td class="py-3 px-4 border-b border-[#ddd]">
+                <img
                         class="thumb"
                         src="../images/capitals. (2).png"
                         alt=""
-                      />
-                    </td>
-                    <td>Countries of the World</td>
-                    <td>Test your knowledge of countries</td>
-                    <td>15m</td>
-                    <td>10</td>
-                    <td>Yes</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
+                />
+              </td>
+              <td class="py-3 px-4 border-b border-[#ddd]">Countries of the World</td>
+              <td class="py-3 px-4 border-b border-[#ddd]">Test your knowledge of countries</td>
+              <td class="py-3 px-4 border-b border-[#ddd]">15m</td>
+              <td class="py-3 px-4 border-b border-[#ddd]">10</td>
+              <td class="py-3 px-4 border-b border-[#ddd]">Yes</td>
+              <td class="py-3 px-4 border-b border-[#ddd] text-center">
+                <button class="icon-btn">
+                  <img
                           src="../images/pen-to-square-solid.svg.png"
                           alt="Edit"
-                        />
-                      </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="pager-row">
-              <div class="page-size">
-                <label>Items per page:</label>
-                <select class="select">
-                  <option>10</option>
-                  <option>20</option>
-                  <option>50</option>
-                </select>
-              </div>
-              <div class="pager">
-                <button class="pager-btn">
-                  <img src="../images/angles-left-solid.png" alt="First" />
+                  />
                 </button>
-                <button class="pager-btn">
-                  <img src="../images/angle-left-solid.png" alt="Prev" />
+                <button class="icon-btn danger">
+                  <img
+                          src="../images/trash-can-regular.svg.png"
+                          alt="Delete"
+                  />
                 </button>
-                <button class="page-num">1</button>
-                <button class="page-num">2</button>
-                <button class="page-num">3</button>
-                <button class="pager-btn">
-                  <img src="../images/angle-right-solid.png" alt="Next" />
-                </button>
-                <button class="pager-btn">
-                  <img src="../images/angles-right-solid.png" alt="Last" />
-                </button>
-              </div>
-              <div class="range">1-10 of 32</div>
-            </div>
-          </div>
-
-          <!-- Panel: Add Quiz -->
-          <div class="panel">
-            <div class="panel-header"><h4>Add Quiz</h4></div>
-            <form class="form-grid">
-              <div class="form-group">
-                <label>Title</label>
-                <input class="input" placeholder="Enter quiz title" />
-              </div>
-              <div class="form-group">
-                <label>Description</label>
-                <input class="input" placeholder="Enter your email" />
-              </div>
-              <div class="form-group">
-                <label>Duration</label>
-                <input class="input" placeholder="Enter quiz duration" />
-              </div>
-              <div class="form-group">
-                <label>Thumbnail URL</label>
-                <input class="input" placeholder="Enter quiz thumbnail URL" />
-              </div>
-              <div class="form-group full">
-                <label class="checkbox"
-                  ><input type="checkbox" /><span>Active</span></label
-                >
-              </div>
-            </form>
-            <div class="panel-actions end">
-              <button
-                class="btn btn-primary btn-icon"
-                style="margin-right: 750px"
-              >
-                <img src="../images/plus-solid.png" alt="" class="icon" />
-                Show Questions
-              </button>
-              <button class="btn btn-icon">
-                <img src="../images/rotate-left-solid.png" alt="" /> Cancel
-              </button>
-              <button class="btn btn-primary btn-icon">
-                <img src="../images/floppy-disk-regular.png" alt="" /> Save
-              </button>
-            </div>
-          </div>
-
-          <!-- Panel: Question List -->
-          <div class="panel">
-            <div class="panel-header"><h4>Question List</h4></div>
-            <div class="table-wrap">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Content</th>
-                    <th>Type</th>
-                    <th>Answers</th>
-                    <th>Order</th>
-                    <th>Status</th>
-                    <th class="col-actions">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Who is the inventor of the airplane?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>1</td>
-                    <td>Yes</td>
-                    <td class="action-cell">
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Who is the inventor of the World Wide Web?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>2</td>
-                    <td>Yes</td>
-                    <td class="action-cell">
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Where is Viet Nam?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>Yes</td>
-                    <td class="action-cell">
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>What is the capital of France?</td>
-                    <td>SingleChoice</td>
-                    <td>4</td>
-                    <td>4</td>
-                    <td>cell</td>
-                    <td class="action-cell">
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Who is the inventor of the alternating current?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>cell</td>
-                    <td class="action-cell">
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Where is Australia?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>6</td>
-                    <td>cell</td>
-                    <td class="action-cell">
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Who is the inventor of the ATM?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>7</td>
-                    <td>cell</td>
-                    <td class="action-cell">
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Where is France?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>8</td>
-                    <td>cell</td>
-                    <td class="action-cell">
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Where is the United States?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>9</td>
-                    <td>cell</td>
-                    <td class="action-cell">
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Who is the inventor of the washing machine?</td>
-                    <td>MultipleChoice</td>
-                    <td>4</td>
-                    <td>10</td>
-                    <td>cell</td>
-                    <td class="action-cell">
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="panel-actions">
-              <button class="btn btn-primary btn-icon">
-                <img src="../images/plus-solid.png" alt="" class="icon" /> Add
-              </button>
-            </div>
-          </div>
-
-          <!-- Panel: Add Quiz Question -->
-          <div class="panel">
-            <div class="panel-header"><h4>Add Quiz</h4></div>
-            <form class="form-grid">
-              <div class="form-group">
-                <label>Question</label>
-                <select class="select">
-                  <option>Select Question Type</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Order</label>
-                <input
-                  class="input"
-                  placeholder="Enter order of question in quiz"
-                />
-              </div>
-            </form>
-            <div class="panel-actions end">
-              <button class="btn btn-icon">
-                <img src="../images/rotate-left-solid.png" alt="" /> Cancel
-              </button>
-              <button class="btn btn-primary btn-icon">
-                <img src="../images/floppy-disk-regular.png" alt="" /> Save
-              </button>
-            </div>
-          </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
         </div>
 
-        <footer>
-          <div class="container footer-top">
-            <div>
-              <div class="footer-brand">
-                <img src="../images/logo.png" alt="Brand logo" />
-                <span>QUIZZES</span>
-              </div>
-              <p class="footer-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-            <div class="footer-col">
-              <span>Menu</span>
-              <ul class="footer-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Quizzes</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <span>Contact</span>
-              <ul class="footer-list">
-                <li>
-                  <img src="../images/envelope-regular.png" alt="" /><a
-                    href="mailto:congdinh2021@gmail.com"
-                    >congdinh2021@gmail.com</a
-                  >
-                </li>
-                <li>
-                  <img src="../images/phone-solid.png" alt="" /><a
-                    href="tel:+84944531536"
-                    >+84 944 531 536</a
-                  >
-                </li>
-                <li>
-                  <img src="../images/location-dot-solid.png" alt="" />123 Xuan
-                  Dinh, Bac Tu Liem, Ha Noi, Viet Nam
-                </li>
-              </ul>
+        <div class="flex justify-between items-center py-3 px-[14px] border-t border-[#ddd]">
+          <div class="text-[14px]">
+            <span>Items per page:</span>
+            <select class="border border-[#ddd] rounded-lg h-[30px] px-3">
+              <option>10</option>
+              <option>20</option>
+              <option>50</option>
+            </select>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="pager-btn">
+              <img src="../images/angles-left-solid.png" alt="First" class="w-4 h-4" />
+            </button>
+            <button class="pager-btn">
+              <img src="../images/angle-left-solid.png" alt="Prev" class="w-4 h-4" />
+            </button>
+            <button class="page-num">1</button>
+            <button class="page-num">2</button>
+            <button class="page-num">3</button>
+            <button class="pager-btn">
+              <img src="../images/angle-right-solid.png" alt="Next" class="w-4 h-4" />
+            </button>
+            <button class="pager-btn">
+              <img src="../images/angles-right-solid.png" alt="Last" class="w-4 h-4" />
+            </button>
+          </div>
+          <div class="text-[14px]">1-10 of 32</div>
+        </div>
+      </div>
+
+      <!-- Panel: Add Quiz -->
+      <div class="border border-[#ddd] rounded-lg bg-white py-[14px] my-[13px]">
+        <div class="flex items-center border-b border-[#b1bed3] p-[10px] mb-3">
+          <h4 class="text-[16px] font-semibold">Add Quiz</h4>
+        </div>
+        <form class="grid grid-cols-2 gap-4 px-[14px] items-start max-[700px]:grid-cols-1 max-[700px]:px-2">
+          <div class="flex flex-col gap-1.5 text-[14px] w-full">
+            <label>Title</label>
+            <input class="h-[30px] border border-[#ddd] rounded-lg px-3 w-full" placeholder="Enter quiz title" />
+          </div>
+          <div class="flex flex-col gap-1.5 text-[14px] w-full">
+            <label>Description</label>
+            <input class="h-[30px] border border-[#ddd] rounded-lg px-3 w-full" placeholder="Enter your email" />
+          </div>
+          <div class="flex flex-col gap-1.5 text-[14px] w-full">
+            <label>Duration</label>
+            <input class="h-[30px] border border-[#ddd] rounded-lg px-3 w-full" placeholder="Enter quiz duration" />
+          </div>
+          <div class="flex flex-col gap-1.5 text-[14px] w-full">
+            <label>Thumbnail URL</label>
+            <input class="h-[30px] border border-[#ddd] rounded-lg px-3 w-full" placeholder="Enter quiz thumbnail URL" />
+          </div>
+          <div class="flex items-center gap-2 col-span-2 mt-2">
+            <label class="flex items-center gap-2 text-[16px]">
+              <input type="checkbox" class="w-6 h-6 accent-[#222] rounded border border-[#bbb]" />
+              <span>Active</span>
+            </label>
+          </div>
+          <!-- Dòng trống để căn lề cho nút Show Questions -->
+          <div></div>
+          <!-- Nút Show Questions bên trái, Cancel/Save bên phải -->
+          <div class="col-span-2 flex justify-between mt-3 px-0">
+            <button class="inline-flex items-center gap-2 px-[14px] py-[7px] border border-[#ddd] rounded bg-[#38b6ff] text-white text-[16px]">
+              <img src="../images/plus-solid.png" alt="" class="w-[18px] h-[18px]" />
+              Show Questions
+            </button>
+            <div class="flex gap-2">
+              <button class="inline-flex items-center gap-2 px-[14px] py-[7px] border border-[#ddd] rounded bg-white text-[#333] text-[16px] hover:bg-[#b1bed3]">
+                <img src="../images/rotate-left-solid.png" alt="" class="w-[18px] h-[18px]" />
+                Cancel
+              </button>
+              <button class="inline-flex items-center gap-2 px-[14px] py-[7px] border border-[#ddd] rounded bg-[#38b6ff] text-white text-[16px]">
+                <img src="../images/floppy-disk-regular.png" alt="" class="w-[18px] h-[18px]" />
+                Save
+              </button>
             </div>
           </div>
-          <div class="footer-bottom">© May 2024 - ReactJS 19</div>
-        </footer>
-      </section>
-    </main>
-  </body>
-</html>
+        </form
