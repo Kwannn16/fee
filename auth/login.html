@@ -4,43 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/login.css" />
   </head>
   <body>
     <main>
-      <section class="login">
-        <form class="login-form" method="post">
-          <h2 class="form-title">Login</h2>
-          <div class="form-group">
-            <label for="username">Username</label>
+      <section class="login flex justify-center items-center min-h-screen">
+        <form
+          class="login-form mx-auto shadow-lg bg-white px-10 py-8 rounded-[10px] w-[623px] h-[400px] text-center"
+          method="post"
+          autocomplete="off"
+        >
+          <h2 class="form-title mb-4 font-bold text-[2.2rem]">Login</h2>
+          <div class="mb-3 text-left">
+            <label for="username" class="form-label block mb-1">Username</label>
             <input
               type="text"
               name="username"
               id="username"
+              class="form-control block w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
               placeholder="Enter your username"
               required
             />
           </div>
-
-          <div class="form-group">
-            <label for="password">Password</label>
+          <div class="mb-3 text-left">
+            <label for="password" class="form-label block mb-1">Password</label>
             <input
               type="password"
               name="password"
               id="password"
+              class="form-control block w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
               placeholder="Enter your password"
               required
             />
           </div>
-
-          <div class="form-actions">
-            <a href="#" class="back-home">Back to Home</a>
-            <button type="submit" class="btn-login">Login</button>
+          <div class="flex flex-row gap-2 my-3 items-center">
+            <div class="w-1/2 text-left">
+              <a href="#" class="back-home text-[22px] text-[#222] no-underline font-sans">Back to Home</a>
+            </div>
+            <div class="w-1/2 text-right">
+              <button
+                type="submit"
+                class="btn-login btn w-full bg-[#38b6ff] text-white border-none py-2 rounded-[6px] cursor-pointer text-[20px] transition-colors duration-200 hover:bg-[#009ee3]"
+              >
+                Login
+              </button>
+            </div>
           </div>
-
-          <div class="extra-links">
-            <a href="#">Forgot password?</a>
-            <p>Don't have an account? <a href="#">Register</a></p>
+          <div class="extra-links mt-2 text-[15px] text-[#444]">
+            <a href="#" class="no-underline text-[#333]">Forgot password?</a>
+            <p class="mt-[6px]">Don't have an account? <a href="#" class="no-underline text-[#333]">Register</a></p>
           </div>
         </form>
       </section>
