@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>403 - Forbidden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/error403.css" />
   </head>
-  <body>
-    <div class="error-box">
-      <h2>403 - Forbidden</h2>
-      <p>You don't have permission to access this page.</p>
-      <a href="../home/home_auth.html" class="btn-home">Back to Home</a>
+  <body class="font-sans min-h-screen flex justify-center items-center" style="background: url('../images/background.png') center/cover;">
+    <div class="bg-white px-10 py-8 rounded-[10px] w-[500px] text-center">
+      <h2 class="mb-[15px]">403 - Forbidden</h2>
+      <p class="text-[13px] text-[#555] mb-5">You don't have permission to access this page.</p>
+      <a href="../home/home_auth.html" class="bg-[#38b6ff] text-white border-none px-5 py-2.5 rounded-[6px] cursor-pointer text-[14px] no-underline block hover:bg-[#009ee3]">Back to Home</a>
     </div>
   </body>
 </html>

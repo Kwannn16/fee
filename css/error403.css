@@ -1,44 +1,9 @@
 * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-      body {
-        font-family: Arial, sans-serif;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: url("../images/background.png") center/cover;
-      }
-
-      .error-box {
-        background: #fff;
-        padding: 30px 40px;
-        border-radius: 10px;
-        width: 500px;
-        text-align: center;
-      }
-
-      .error-box h2 {
-        margin-bottom: 15px;
-      }
-
-      .error-box p {
-        font-size: 13px;
-        color: #555;
-        margin-bottom: 20px;
-      }
-
-      .btn-home {
-        background: #38b6ff;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 14px;
-        text-decoration: none;
-        display: block;
-      }
+body {
+  font-family: Arial, sans-serif;
+}
