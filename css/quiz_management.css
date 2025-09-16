@@ -164,6 +164,15 @@ header {
 .panel-actions.between {
   justify-content: space-between;
 }
+
+/* Custom row for filter panel actions */
+.filter-actions-row {
+  margin-top: 16px;
+}
+.filter-actions-btns {
+  display: flex;
+  gap: 10px;
+}
 .panel-actions.end {
   justify-content: flex-end;
 }
