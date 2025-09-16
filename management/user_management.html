@@ -4,36 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Management</title>
-    <link rel="stylesheet" href="../css/user_management.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
+  <body class="font-['Inter',sans-serif] leading-[1.5] text-[#222] bg-[#f7f8fb]">
     <!-- ======= HEADER ======= -->
-    <header>
-      <nav class="navbar container flex justify-between align-center">
-        <a href="#" class="brand-logo flex align-center">
-          <img src="../images/logo.png" alt="Brand logo" />
+    <header class="bg-white border-b border-[#ddd]">
+      <nav class="flex justify-between items-center h-[56px] max-w-[1180px] mx-auto">
+        <a href="#" class="flex items-center text-[20px] text-black gap-2">
+          <img src="../images/logo.png" alt="Brand logo" class="w-[71px] h-[48px]" />
           <span>Quizzes</span>
         </a>
-
-        <ul class="nav-menu flex">
-          <li class="nav-item"><a href="#">Home</a></li>
-          <li class="nav-item"><a href="#">Quizzes</a></li>
-          <li class="nav-item"><a href="#">Management</a></li>
-          <li class="nav-item"><a href="#">About</a></li>
-          <li class="nav-item"><a href="#">Contact</a></li>
+        <ul class="flex gap-6">
+          <li><a href="#" class="text-[#333] hover:text-[#2b8cff]">Home</a></li>
+          <li><a href="#" class="text-[#333] hover:text-[#2b8cff]">Quizzes</a></li>
+          <li><a href="#" class="text-[#333] hover:text-[#2b8cff]">Management</a></li>
+          <li><a href="#" class="text-[#333] hover:text-[#2b8cff]">About</a></li>
+          <li><a href="#" class="text-[#333] hover:text-[#2b8cff]">Contact</a></li>
         </ul>
-
-        <div class="profile-menu">
-          <div class="authenticated">
-            <img
-              class="avatar"
-              src="../images/profile-avatar.png"
-              alt="avatar"
-            />
-            <ul class="profile-dropdown">
-              <li class="nav-item">Cong Dinh</li>
-              <li class="nav-item">Change Password</li>
-              <li class="nav-item">Logout</li>
+        <div>
+          <div class="relative group">
+            <img class="w-12 h-12 rounded-full border border-[#ddd] bg-white cursor-pointer" src="../images/profile-avatar.png" alt="avatar" />
+            <ul class="absolute right-0 top-10 bg-white border border-[#ddd] rounded-lg p-2 min-w-[180px] hidden group-hover:block shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+              <li class="p-2 rounded text-sm hover:bg-[#f5f7fa]">Cong Dinh</li>
+              <li class="p-2 rounded text-sm hover:bg-[#f5f7fa]">Change Password</li>
+              <li class="p-2 rounded text-sm hover:bg-[#f5f7fa]">Logout</li>
             </ul>
           </div>
         </div>
@@ -41,346 +35,281 @@
     </header>
 
     <!-- ======= MAIN (SIDEBAR + CONTENT) ======= -->
-    <main class="layout">
-      <!-- Sidebar (cột trái) -->
-      <aside class="sidebar">
-        <h3 class="sidebar-title">Menu</h3>
-        <ul class="side-nav">
-          <li class="side-item active">
-            <img
-              src="../images/person-circle-question-solid.svg.png"
-              alt=""
-              class="icon"
-            />
+    <main class="grid grid-cols-[240px_1fr] gap-0 max-[700px]:grid-cols-1">
+      <!-- Sidebar -->
+      <aside class="bg-white py-3 font-semibold border-r border-[#ddd] max-[700px]:hidden">
+        <h3 class="pl-[14px] my-[6px] mb-[10px] text-[16px]">Menu</h3>
+        <ul class="flex flex-col gap-2.5">
+          <li class="flex items-center gap-2 p-[10px_12px] border-b border-[#ddd] text-[15px] cursor-pointer bg-[#d9e7ff]">
+            <img src="../images/person-circle-question-solid.svg.png" alt="" class="w-4 h-4" />
             Quiz Management
           </li>
-          <li class="side-item">
-            <img src="../images/question-solid.svg.png" alt="" class="icon" />
+          <li class="flex items-center gap-2 p-[10px_12px] border-b border-[#ddd] text-[15px] cursor-pointer hover:bg-[#b1bed3]">
+            <img src="../images/question-solid.svg.png" alt="" class="w-4 h-4" />
             Question Management
           </li>
-          <li class="side-item">
-            <img src="../images/user-solid.svg.png" alt="" class="icon" />
+          <li class="flex items-center gap-2 p-[10px_12px] border-b border-[#ddd] text-[15px] cursor-pointer hover:bg-[#b1bed3]">
+            <img src="../images/user-solid.svg.png" alt="" class="w-4 h-4" />
             User Management
           </li>
-          <li class="side-item">
-            <img
-              src="../images/user-shield-solid.svg.png"
-              alt=""
-              class="icon"
-            />
+          <li class="flex items-center gap-2 p-[10px_12px] border-b border-[#ddd] text-[15px] cursor-pointer hover:bg-[#b1bed3]">
+            <img src="../images/user-shield-solid.svg.png" alt="" class="w-4 h-4" />
             Role Management
           </li>
         </ul>
       </aside>
 
-      <!-- Content (cột phải) -->
+      <!-- Content -->
       <section class="content">
-        <div class="container">
+        <div class="max-w-[1180px] mx-auto">
           <!-- Panel: Filter + Create -->
-          <div class="panel">
-            <div class="panel-header flex justify-between align-center">
+          <div class="border border-[#ddd] rounded-lg bg-white py-[14px] my-[13px]">
+            <div class="flex items-center border-b border-[#b1bed3] p-[10px] mb-3">
               <h4>User Management</h4>
             </div>
-
-            <div class="filter-grid">
-              <div class="form-group">
+            <div class="grid grid-cols-[570px_220px] gap-4 pl-[14px] max-w-[800px] items-end max-[700px]:grid-cols-1 max-[700px]:max-w-full max-[700px]:pl-0">
+              <div class="flex flex-col gap-1.5 text-[14px] w-full max-w-[570px]">
                 <label>Name</label>
-                <input
-                  type="text"
-                  class="input"
-                  placeholder="Enter username to search"
-                />
+                <input type="text" class="h-[30px] border border-[#ddd] rounded-lg px-3 w-full max-w-[570px]" placeholder="Enter username to search" />
               </div>
-
-              <div class="form-group status-group">
+              <div class="flex flex-col gap-1.5 text-[14px] w-full max-w-[220px]">
                 <label>Status</label>
-                <label class="checkbox">
-                  <input type="checkbox" />
+                <label class="flex items-center gap-2">
+                  <input type="checkbox" class="w-5 h-5 accent-[#222] rounded border border-[#bbb]" />
                   <span>Active</span>
                 </label>
               </div>
             </div>
-
-            <div class="panel-actions">
-              <button class="btn btn-primary btn-icon btn-create">
-                <img src="../images/plus-solid.png" alt="" class="icon" />
+            <div class="flex justify-end gap-2 mt-4 pr-[14px] max-[700px]:flex-col max-[700px]:items-stretch max-[700px]:gap-2 max-[700px]:pr-0">
+              <button class="inline-flex items-center gap-2 px-[14px] py-[7px] border border-[#ddd] rounded bg-[#38b6ff] text-white text-[16px] mr-auto">
+                <img src="../images/plus-solid.png" alt="" class="w-[18px] h-[18px]" />
                 Create
               </button>
-              <button class="btn btn-icon">
-                <img
-                  src="../images/rotate-left-solid.png"
-                  alt=""
-                  class="icon"
-                />
+              <button class="inline-flex items-center gap-2 px-[14px] py-[7px] border border-[#ddd] rounded bg-white text-[#333] text-[16px] hover:bg-[#b1bed3]">
+                <img src="../images/rotate-left-solid.png" alt="" class="w-[18px] h-[18px]" />
                 Clear
               </button>
-              <button class="btn btn-primary btn-icon">
-                <img
-                  src="../images/magnifying-glass-solid.svg.png"
-                  alt=""
-                  class="icon"
-                />
+              <button class="inline-flex items-center gap-2 px-[14px] py-[7px] border border-[#ddd] rounded bg-[#38b6ff] text-white text-[16px]">
+                <img src="../images/magnifying-glass-solid.svg.png" alt="" class="w-[18px] h-[18px]" />
                 Search
               </button>
             </div>
           </div>
 
           <!-- Panel: Table -->
-          <div class="panel">
-            <div class="panel-header">
+          <div class="border border-[#ddd] rounded-lg bg-white py-[14px] my-[13px]">
+            <div class="flex items-center border-b border-[#b1bed3] p-[10px] mb-3">
               <h4>User List</h4>
             </div>
-
-            <div class="table-wrap">
-              <table class="table">
+            <div class="overflow-x-auto">
+              <table class="border-collapse w-full">
                 <thead>
                   <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>User Name</th>
-                    <th>Phone Number</th>
-                    <th>Status</th>
-                    <th class="col-actions">Action</th>
+                    <th class="p-[10px] border-b border-[#eee] text-[16px] text-left">First Name</th>
+                    <th class="p-[10px] border-b border-[#eee] text-[16px] text-left">Last Name</th>
+                    <th class="p-[10px] border-b border-[#eee] text-[16px] text-left">Email</th>
+                    <th class="p-[10px] border-b border-[#eee] text-[16px] text-left">User Name</th>
+                    <th class="p-[10px] border-b border-[#eee] text-[16px] text-left">Phone Number</th>
+                    <th class="p-[10px] border-b border-[#eee] text-[16px] text-left">Status</th>
+                    <th class="p-[10px] border-b border-[#eee] text-[16px] text-left w-[110px]">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Admin</td>
-                    <td>User</td>
-                    <td>admin@domain.com</td>
-                    <td>admin</td>
-                    <td>+84987654321</td>
-                    <td>Yes</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">Admin</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">User</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">admin@domain.com</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">admin</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">+84987654321</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">Yes</td>
+                    <td class="flex gap-1 p-[10px] border-b border-[#eee] text-[16px] text-left w-[110px]">
+                      <button class="border border-[#ddd] rounded p-1 flex items-center bg-white hover:bg-[#a0adcf]">
+                        <img src="../images/pen-to-square-solid.svg.png" alt="Edit" class="w-4 h-4" />
                       </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
+                      <button class="border border-[#ddd] rounded p-1 flex items-center bg-white hover:bg-[#d3d7df]">
+                        <img src="../images/trash-can-regular.svg.png" alt="Delete" class="w-4 h-4 text-[#ff2222]" />
                       </button>
                     </td>
                   </tr>
                   <tr>
-                    <td>Editor</td>
-                    <td>User</td>
-                    <td>editor@domain.com</td>
-                    <td>editor</td>
-                    <td>+84987654321</td>
-                    <td>Yes</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">Editor</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">User</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">editor@domain.com</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">editor</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">+84987654321</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">Yes</td>
+                    <td class="flex gap-1 p-[10px] border-b border-[#eee] text-[16px] text-left w-[110px]">
+                      <button class="border border-[#ddd] rounded p-1 flex items-center bg-white hover:bg-[#a0adcf]">
+                        <img src="../images/pen-to-square-solid.svg.png" alt="Edit" class="w-4 h-4" />
                       </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
+                      <button class="border border-[#ddd] rounded p-1 flex items-center bg-white hover:bg-[#d3d7df]">
+                        <img src="../images/trash-can-regular.svg.png" alt="Delete" class="w-4 h-4 text-[#ff2222]" />
                       </button>
                     </td>
                   </tr>
                   <tr>
-                    <td>Cong</td>
-                    <td>Dinh</td>
-                    <td>congdinh@domain.com</td>
-                    <td>congdinh</td>
-                    <td>+84987654321</td>
-                    <td>Yes</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">Cong</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">Dinh</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">congdinh@domain.com</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">congdinh</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">+84987654321</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">Yes</td>
+                    <td class="flex gap-1 p-[10px] border-b border-[#eee] text-[16px] text-left w-[110px]">
+                      <button class="border border-[#ddd] rounded p-1 flex items-center bg-white hover:bg-[#a0adcf]">
+                        <img src="../images/pen-to-square-solid.svg.png" alt="Edit" class="w-4 h-4" />
                       </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
+                      <button class="border border-[#ddd] rounded p-1 flex items-center bg-white hover:bg-[#d3d7df]">
+                        <img src="../images/trash-can-regular.svg.png" alt="Delete" class="w-4 h-4 text-[#ff2222]" />
                       </button>
                     </td>
                   </tr>
                   <tr>
-                    <td>Van</td>
-                    <td>Nguyen</td>
-                    <td>vannguyen@domain.com</td>
-                    <td>vannguyen</td>
-                    <td>+84987654321</td>
-                    <td>Yes</td>
-                    <td class="action-cell">
-                      <button class="icon-btn">
-                        <img
-                          src="../images/pen-to-square-solid.svg.png"
-                          alt="Edit"
-                        />
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">Van</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">Nguyen</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">vannguyen@domain.com</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">vannguyen</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">+84987654321</td>
+                    <td class="p-[10px] border-b border-[#eee] text-[16px] text-left">Yes</td>
+                    <td class="flex gap-1 p-[10px] border-b border-[#eee] text-[16px] text-left w-[110px]">
+                      <button class="border border-[#ddd] rounded p-1 flex items-center bg-white hover:bg-[#a0adcf]">
+                        <img src="../images/pen-to-square-solid.svg.png" alt="Edit" class="w-4 h-4" />
                       </button>
-                      <button class="icon-btn danger">
-                        <img
-                          src="../images/trash-can-regular.svg.png"
-                          alt="Delete"
-                        />
+                      <button class="border border-[#ddd] rounded p-1 flex items-center bg-white hover:bg-[#d3d7df]">
+                        <img src="../images/trash-can-regular.svg.png" alt="Delete" class="w-4 h-4 text-[#ff2222]" />
                       </button>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-
             <!-- Pager row -->
-            <div class="pager-row">
-              <div class="page-size">
+            <div class="grid grid-cols-[1fr_auto_1fr] gap-2 items-center">
+              <div class="flex items-center w-max gap-1.5 pt-[14px] pl-[14px]">
                 <label>Items per page:</label>
-                <select class="select">
+                <select class="w-[70px] h-[30px] border border-[#ddd] rounded-lg px-3">
                   <option>10</option>
                   <option>20</option>
                   <option>50</option>
                 </select>
               </div>
-              <div class="pager">
-                <button class="pager-btn">
-                  <img src="../images/angles-left-solid.png" alt="First" />
+              <div class="flex items-center gap-2 pt-[10px]">
+                <button class="w-[26px] h-[26px] border border-[#d3d7df] rounded-full bg-white text-[#38b6ff] flex items-center justify-center">
+                  <img src="../images/angles-left-solid.png" alt="First" class="w-3 h-3" />
                 </button>
-                <button class="pager-btn">
-                  <img src="../images/angle-left-solid.png" alt="Prev" />
+                <button class="w-[26px] h-[26px] border border-[#d3d7df] rounded-full bg-white text-[#38b6ff] flex items-center justify-center">
+                  <img src="../images/angle-left-solid.png" alt="Prev" class="w-3 h-3" />
                 </button>
-                <button class="page-num current">1</button>
-                <button class="page-num">2</button>
-                <button class="page-num">3</button>
-                <button class="pager-btn">
-                  <img src="../images/angle-right-solid.png" alt="Next" />
+                <button class="w-[26px] h-[26px] border border-[#d3d7df] rounded-full bg-white text-[#38b6ff] flex items-center justify-center">1</button>
+                <button class="w-[26px] h-[26px] border border-[#d3d7df] rounded-full bg-white text-[#38b6ff] flex items-center justify-center">2</button>
+                <button class="w-[26px] h-[26px] border border-[#d3d7df] rounded-full bg-white text-[#38b6ff] flex items-center justify-center">3</button>
+                <button class="w-[26px] h-[26px] border border-[#d3d7df] rounded-full bg-white text-[#38b6ff] flex items-center justify-center">
+                  <img src="../images/angle-right-solid.png" alt="Next" class="w-3 h-3" />
                 </button>
-                <button class="pager-btn">
-                  <img src="../images/angles-right-solid.png" alt="Last" />
+                <button class="w-[26px] h-[26px] border border-[#d3d7df] rounded-full bg-white text-[#38b6ff] flex items-center justify-center">
+                  <img src="../images/angles-right-solid.png" alt="Last" class="w-3 h-3" />
                 </button>
               </div>
-              <div class="range">1–10 of 32</div>
+              <div class="text-[16px] pt-[10px] pr-[10px] text-right">1–10 of 32</div>
             </div>
           </div>
 
           <!-- Panel: Form -->
-          <div class="panel">
-            <div class="panel-header">
+          <div class="border border-[#ddd] rounded-lg bg-white py-[14px] my-[13px]">
+            <div class="flex items-center border-b border-[#b1bed3] p-[10px] mb-3">
               <h4>Add User</h4>
             </div>
-
-            <form class="form-grid">
-              <div class="form-group">
+            <form class="grid grid-cols-2 gap-4 px-[14px] max-[700px]:grid-cols-1 max-[700px]:px-2">
+              <div class="flex flex-col gap-1.5 text-[14px] w-full">
                 <label>First Name</label>
-                <input class="input" placeholder="Enter your first name" />
+                <input class="h-[30px] border border-[#ddd] rounded-lg px-3 w-full" placeholder="Enter your first name" />
               </div>
-              <div class="form-group">
+              <div class="flex flex-col gap-1.5 text-[14px] w-full">
                 <label>Last Name</label>
-                <input class="input" placeholder="Enter your last name" />
+                <input class="h-[30px] border border-[#ddd] rounded-lg px-3 w-full" placeholder="Enter your last name" />
               </div>
-
-              <div class="form-group">
+              <div class="flex flex-col gap-1.5 text-[14px] w-full">
                 <label>Email</label>
-                <input class="input" placeholder="Enter your email" />
+                <input class="h-[30px] border border-[#ddd] rounded-lg px-3 w-full" placeholder="Enter your email" />
               </div>
-              <div class="form-group">
+              <div class="flex flex-col gap-1.5 text-[14px] w-full">
                 <label>User Name</label>
-                <input class="input" placeholder="Enter your user name" />
+                <input class="h-[30px] border border-[#ddd] rounded-lg px-3 w-full" placeholder="Enter your user name" />
               </div>
-
-              <div class="form-group">
+              <div class="flex flex-col gap-1.5 text-[14px] w-full">
                 <label>Password</label>
-                <input
-                  type="password"
-                  class="input"
-                  placeholder="Enter your password"
-                />
+                <input type="password" class="h-[30px] border border-[#ddd] rounded-lg px-3 w-full" placeholder="Enter your password" />
               </div>
-              <div class="form-group">
+              <div class="flex flex-col gap-1.5 text-[14px] w-full">
                 <label>Confirm Password</label>
-                <input
-                  type="password"
-                  class="input"
-                  placeholder="Confirm your password"
-                />
+                <input type="password" class="h-[30px] border border-[#ddd] rounded-lg px-3 w-full" placeholder="Confirm your password" />
               </div>
-
-              <div class="form-group">
+              <div class="flex flex-col gap-1.5 text-[14px] w-full">
                 <label>Date of Birth</label>
-                <input class="input" placeholder="Enter your date of birth" />
+                <input class="h-[30px] border border-[#ddd] rounded-lg px-3 w-full" placeholder="Enter your date of birth" />
               </div>
-              <div class="form-group">
+              <div class="flex flex-col gap-1.5 text-[14px] w-full">
                 <label>Phone Number</label>
-                <input class="input" placeholder="Enter your phone number" />
+                <input class="h-[30px] border border-[#ddd] rounded-lg px-3 w-full" placeholder="Enter your phone number" />
               </div>
-
-              <div class="form-group full">
-                <label class="checkbox">
-                  <input type="checkbox" />
+              <div class="flex items-center gap-2 col-span-2 mt-2">
+                <label class="flex items-center gap-2 text-[16px]">
+                  <input type="checkbox" class="w-5 h-5 accent-[#222] rounded border border-[#bbb]" />
                   <span>Active</span>
                 </label>
               </div>
             </form>
-
-            <div class="panel-actions end">
-              <button class="btn btn-icon">
-                <img src="../images/rotate-left-solid.png" alt="" /> Cancel
+            <div class="flex justify-end gap-2 mt-3 px-[14px]">
+              <button class="inline-flex items-center gap-2 px-[14px] py-[7px] border border-[#ddd] rounded bg-white text-[#333] text-[16px] hover:bg-[#b1bed3]">
+                <img src="../images/rotate-left-solid.png" alt="" class="w-[18px] h-[18px]" />
+                Cancel
               </button>
-              <button class="btn btn-primary btn-icon">
-                <img src="../images/floppy-disk-regular.png" alt="" /> Save
+              <button class="inline-flex items-center gap-2 px-[14px] py-[7px] border border-[#ddd] rounded bg-[#38b6ff] text-white text-[16px]">
+                <img src="../images/floppy-disk-regular.png" alt="" class="w-[18px] h-[18px]" />
+                Save
               </button>
             </div>
           </div>
         </div>
         <footer>
-          <div class="container footer-top">
+          <div class="max-w-[1180px] mx-auto grid grid-cols-[1.2fr_0.6fr_1fr] gap-6 py-5 border-t border-[#ddd] mt-8 max-[700px]:grid-cols-1 max-[700px]:gap-4">
             <div>
-              <div class="footer-brand">
-                <img src="../images/logo.png" alt="Brand logo" />
-                <span>QUIZZES</span>
+              <div class="flex items-center gap-2 mb-2">
+                <img src="../images/logo.png" alt="Brand logo" class="w-6 h-6" />
+                <span class="font-bold text-lg">QUIZZES</span>
               </div>
-              <p class="footer-text">
+              <p class="text-[#666] text-[13px] leading-[1.4] mt-1">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
             </div>
-
-            <div class="footer-col">
-              <span>Menu</span>
-              <ul class="footer-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Quizzes</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+            <div>
+              <span class="font-bold text-[20px]">Menu</span>
+              <ul class="mt-2 flex flex-col gap-1 text-[14px]">
+                <li><a href="#" class="hover:text-[#38b6ff]">Home</a></li>
+                <li><a href="#" class="hover:text-[#38b6ff]">Quizzes</a></li>
+                <li><a href="#" class="hover:text-[#38b6ff]">About</a></li>
+                <li><a href="#" class="hover:text-[#38b6ff]">Contact</a></li>
               </ul>
             </div>
-
-            <div class="footer-col">
-              <span>Contact</span>
-              <ul class="footer-list">
-                <li>
-                  <img src="../images/envelope-regular.png" alt="" />
-                  <a href="mailto:congdinh2021@gmail.com"
-                    >congdinh2021@gmail.com</a
-                  >
+            <div>
+              <span class="font-bold text-[20px]">Contact</span>
+              <ul class="mt-2 flex flex-col gap-1 text-[14px]">
+                <li class="flex items-center gap-2">
+                  <img src="../images/envelope-regular.png" alt="" class="w-4 h-4" />
+                  <a href="mailto:congdinh2021@gmail.com">congdinh2021@gmail.com</a>
                 </li>
-                <li>
-                  <img src="../images/phone-solid.png" alt="" />
+                <li class="flex items-center gap-2">
+                  <img src="../images/phone-solid.png" alt="" class="w-4 h-4" />
                   <a href="tel:+84944531536">+84 944 531 536</a>
                 </li>
-                <li>
-                  <img src="../images/location-dot-solid.png" alt="" />
+                <li class="flex items-center gap-2">
+                  <img src="../images/location-dot-solid.png" alt="" class="w-4 h-4" />
                   123 Xuan Dinh, Bac Tu Liem, Ha Noi, Viet Nam
                 </li>
               </ul>
             </div>
           </div>
-          <div class="footer-bottom">© May 2024 - ReactJS 19</div>
+          <div class="text-center py-4 text-[14px] text-[#888] border-t border-[#eee]">© May 2024 - ReactJS 19</div>
         </footer>
       </section>
     </main>
