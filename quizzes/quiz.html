@@ -4,155 +4,146 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quizzes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/quiz.css" />
   </head>
-  <body>
-    <header>
-      <nav class="navbar container flex justify-between align-center">
-        <a href="#" class="brand-logo flex align-center">
+  <body class="font-sans">
+    <header class="border-b border-[#ddd] w-full">
+      <nav class="max-w-[1180px] mx-auto px-6 flex justify-between items-center h-[56px]">
+        <a href="#" class="flex items-center gap-[6px] text-[20px] text-black">
           <img src="../images/logo.png" alt="Brand logo" />
           <span>Quizzes</span>
         </a>
-
-        <ul class="nav-menu flex">
-          <li class="nav-item"><a href="#">Home</a></li>
-          <li class="nav-item"><a href="#">Quizzes</a></li>
-          <li class="nav-item"><a href="#">Management</a></li>
-          <li class="nav-item"><a href="#">About</a></li>
-          <li class="nav-item"><a href="#">Contact</a></li>
+        <ul class="flex gap-6">
+          <li><a href="#" class="hover:text-[#2b8cff]">Home</a></li>
+          <li><a href="#" class="hover:text-[#2b8cff]">Quizzes</a></li>
+          <li><a href="#" class="hover:text-[#2b8cff]">Management</a></li>
+          <li><a href="#" class="hover:text-[#2b8cff]">About</a></li>
+          <li><a href="#" class="hover:text-[#2b8cff]">Contact</a></li>
         </ul>
-
-        <div class="profile-menu">
-          <div class="authenticated">
-            <img
-              class="avatar"
-              src="../images/profile-avatar.png"
-              alt="avatar"
-            />
-            <ul class="profile-dropdown">
-              <li class="nav-item">Cong Dinh</li>
-              <li class="nav-item">Change Password</li>
-              <li class="nav-item">Logout</li>
+        <div class="flex gap-3 items-center">
+          <div class="relative group">
+            <img class="w-8 h-8 rounded-full" src="../images/profile-avatar.png" alt="avatar" />
+            <ul class="absolute right-0 top-[45px] bg-white border border-[#ddd] rounded-lg p-2 min-w-[160px] hidden group-hover:block shadow">
+              <li class="px-2 py-2 rounded text-[14px] hover:bg-[#f5f7fa] cursor-pointer">Cong Dinh</li>
+              <li class="px-2 py-2 rounded text-[14px] hover:bg-[#f5f7fa] cursor-pointer">Change Password</li>
+              <li class="px-2 py-2 rounded text-[14px] hover:bg-[#f5f7fa] cursor-pointer">Logout</li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
 
-    <main class="container">
-      <section class="quiz-hero">
-        <h2 class="page-title">Take a Quiz</h2>
-
-        <div class="quiz-search">
+    <main class="max-w-[1180px] mx-auto px-6">
+      <section class="flex flex-col items-center my-[30px] mb-6">
+        <h2 class="mb-5 text-[2rem] font-bold">Take a Quiz</h2>
+        <div class="flex items-center w-full max-w-[950px]">
           <input
-            class="search-input"
+            class="flex-1 h-9 border border-[#ddd] rounded-l-[6px] px-3"
             type="text"
             placeholder="Enter quiz code to take a quiz"
           />
-          <button class="search-btn">Take Quiz</button>
+          <button class="h-9 px-4 border-none rounded-r-[6px] bg-[#38b6ff] text-white cursor-pointer">Take Quiz</button>
         </div>
       </section>
 
-      <h3 class="section-title">QUIZZES</h3>
-      <section class="quiz-grid">
-        <article class="quiz-card">
-          <div class="quiz-thumb">
+      <h3 class="text-center font-bold my-3 mb-5">QUIZZES</h3>
+      <section class="flex gap-4 justify-center flex-wrap mb-6">
+        <article class="border border-[#ddd] rounded-[10px] w-[300px] overflow-hidden bg-white">
+          <div class="h-[160px] flex items-center justify-center">
             <img src="../images/capitals..png" />
           </div>
-          <div class="quiz-body">
-            <div class="quiz-row">
-              <div class="quiz-title">Capitals of Country</div>
-              <div class="quiz-time">15m</div>
+          <div class="p-[15px]">
+            <div class="flex justify-between items-center mb-2">
+              <div class="font-bold my-[6px] mb-1">Capitals of Country</div>
+              <div>15m</div>
             </div>
-            <p class="quiz-desc">Test your knowledge of country capitals</p>
+            <p class="text-[#555] text-[13px]">Test your knowledge of country capitals</p>
           </div>
-          <div class="quiz-actions">
-            <a href="#" class="btn">Start</a>
+          <div class="p-3">
+            <a href="#" class="w-full text-center border border-[#38b6ff] rounded-[8px] bg-[#38b6ff] text-white block py-2 hover:bg-[#009ee3]">Start</a>
           </div>
         </article>
-
         <!-- Card 2 -->
-        <article class="quiz-card">
-          <div class="quiz-thumb">
+        <article class="border border-[#ddd] rounded-[10px] w-[300px] overflow-hidden bg-white">
+          <div class="h-[160px] flex items-center justify-center">
             <img src="../images/capitals. (1).png" />
           </div>
-          <div class="quiz-body">
-            <div class="quiz-row">
-              <div class="quiz-title">Capitals of Country</div>
-              <div class="quiz-time">15m</div>
+          <div class="p-[15px]">
+            <div class="flex justify-between items-center mb-2">
+              <div class="font-bold my-[6px] mb-1">Capitals of Country</div>
+              <div>15m</div>
             </div>
-            <p class="quiz-desc">Test your knowledge of country capitals</p>
+            <p class="text-[#555] text-[13px]">Test your knowledge of country capitals</p>
           </div>
-          <div class="quiz-actions">
-            <a href="#" class="btn">Start</a>
+          <div class="p-3">
+            <a href="#" class="w-full text-center border border-[#38b6ff] rounded-[8px] bg-[#38b6ff] text-white block py-2 hover:bg-[#009ee3]">Start</a>
           </div>
         </article>
-
         <!-- Card 3 -->
-        <article class="quiz-card">
-          <div class="quiz-thumb">
+        <article class="border border-[#ddd] rounded-[10px] w-[300px] overflow-hidden bg-white">
+          <div class="h-[160px] flex items-center justify-center">
             <img src="../images/capitals. (2).png" />
           </div>
-          <div class="quiz-body">
-            <div class="quiz-row">
-              <div class="quiz-title">Capitals of Country</div>
-              <div class="quiz-time">15m</div>
+          <div class="p-[15px]">
+            <div class="flex justify-between items-center mb-2">
+              <div class="font-bold my-[6px] mb-1">Capitals of Country</div>
+              <div>15m</div>
             </div>
-            <p class="quiz-desc">Test your knowledge of country capitals</p>
+            <p class="text-[#555] text-[13px]">Test your knowledge of country capitals</p>
           </div>
-          <div class="quiz-actions">
-            <a href="#" class="btn">Start</a>
+          <div class="p-3">
+            <a href="#" class="w-full text-center border border-[#38b6ff] rounded-[8px] bg-[#38b6ff] text-white block py-2 hover:bg-[#009ee3]">Start</a>
           </div>
         </article>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-      <div class="container footer-top">
+    <footer class="border-t border-[#ddd] font-sans">
+      <div class="max-w-[1180px] mx-auto px-6 grid grid-cols-[1.2fr_0.6fr_1fr] gap-6 py-5">
         <div>
-          <div class="footer-brand">
+          <div class="flex items-center gap-2">
             <img src="../images/logo.png" alt="Brand logo" />
-            <span>QUIZZES</span>
+            <span class="font-bold">QUIZZES</span>
           </div>
-          <p class="footer-text">
+          <p class="text-[#666] text-[13px] leading-[1.4] mt-2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
-
         <!-- Menu -->
-        <div class="footer-col">
-          <span>Menu</span>
-          <ul class="footer-list">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Quizzes</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+        <div>
+          <span class="text-[20px] font-semibold">Menu</span>
+          <ul class="mt-2">
+            <li class="pt-2 text-[14px] text-[#1e90ff] flex items-center gap-1"><a href="#">Home</a></li>
+            <li class="pt-2 text-[14px] text-[#1e90ff] flex items-center gap-1"><a href="#">Quizzes</a></li>
+            <li class="pt-2 text-[14px] text-[#1e90ff] flex items-center gap-1"><a href="#">About</a></li>
+            <li class="pt-2 text-[14px] text-[#1e90ff] flex items-center gap-1"><a href="#">Contact</a></li>
           </ul>
         </div>
-
         <!-- Contact -->
-        <div class="footer-col">
-          <span>Contact</span>
-          <ul class="footer-list">
-            <li>
+        <div>
+          <span class="text-[20px] font-semibold">Contact</span>
+          <ul class="mt-2">
+            <li class="pt-2 text-[14px] text-[#1e90ff] flex items-center gap-1">
               <img src="../images/envelope-regular.png" alt="" />
               <a href="mailto:congdinh2021@gmail.com">congdinh2021@gmail.com</a>
             </li>
-            <li>
+            <li class="pt-2 text-[14px] text-[#1e90ff] flex items-center gap-1">
               <img src="../images/phone-solid.png" alt="" />
               <a href="tel:+84944531536">+84 944 531 536</a>
             </li>
-            <li>
+            <li class="pt-2 text-[14px] text-[#1e90ff] flex items-center gap-1">
               <img src="../images/location-dot-solid.png" alt="" />
               123 Xuan Dinh, Bac Tu Liem, Ha Noi, Viet Nam
             </li>
           </ul>
         </div>
       </div>
-
-      <div class="footer-bottom">© May 2024 - ReactJS 19</div>
+      <div class="border-t border-[#eee] text-center text-[#666] text-[12px] py-2">
+        © May 2024 - ReactJS 19
+      </div>
     </footer>
   </body>
 </html>
